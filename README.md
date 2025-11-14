@@ -1,4 +1,5 @@
-<h1 class="center-title">🌌 RyuZeNK.Ai — Portafolio Web 🌌</h1>
+<h1 align="center">🌌 RyuZeNK.Ai — Portafolio Web 🌌</h1>
+
 
 Bienvenido a mi portafolio personal.  
 Aquí muestro mi progreso, habilidades, proyectos y el camino que estoy construyendo para convertirme en Full Stack Developer y creador de experiencias potenciadas por IA.
