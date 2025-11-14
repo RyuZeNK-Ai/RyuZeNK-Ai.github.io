@@ -14,21 +14,16 @@
     --color-accent-light: #f3e5ff;
     
     /* Modo Oscuro */
-    --color-bg-dark: #050509;
-    --color-bg-alt-dark: #0b0b10;
-    --color-text-dark: #e8e8e8;
-    --color-text-secondary-dark: #a0a0a0;
-    --color-border-dark: #1a1a1f;
-    
-    /* Sombras */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+    --color-bg-dark: #0a0a0f;
+    --color-bg-alt-dark: #111018;
+    --color-text-dark: #f5f5f5;
+    --color-text-secondary-dark: #c2b6d0;
+    --color-border-dark: #2f2540;
     
     /* Tipografía */
     --font-primary: 'Poppins', sans-serif;
     --font-mono: 'Fira Code', monospace;
-    
+
     /* Espaciado */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -41,14 +36,15 @@
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
-    
+
     /* Transiciones */
     --transition-fast: 150ms ease-in-out;
     --transition-normal: 300ms ease-in-out;
-    --transition-slow: 500ms ease-in-out;
 }
 
-/* Modo Oscuro */
+/* ========================================
+   MODO OSCURO
+   ======================================== */
 body.theme-dark {
     --color-bg: var(--color-bg-dark);
     --color-bg-alt: var(--color-bg-alt-dark);
@@ -93,7 +89,6 @@ body {
 
 .header.scrolled {
     border-bottom-color: var(--color-border);
-    box-shadow: var(--shadow-sm);
 }
 
 .header__container {
@@ -108,9 +103,10 @@ body {
 .header__logo-text {
     font-size: 1.4rem;
     font-weight: 700;
-    background-clip: text;            /* 👉 versión estándar */
-    -webkit-background-clip: text;    /* 👉 necesario para Chrome/WebKit */
-    -webkit-text-fill-color: transparent;
+    color: #fff;
+    text-shadow:
+        0 0 4px #8A2BE2,
+        0 0 10px #8A2BE2;
 }
 
 .header__nav {
@@ -123,6 +119,12 @@ body {
     font-weight: 500;
     color: var(--color-text);
     position: relative;
+    transition: 200ms;
+}
+
+.header__nav-link:hover {
+    color: #fff;
+    text-shadow: 0 0 8px #8A2BE2;
 }
 
 .header__nav-link::after {
@@ -147,23 +149,13 @@ body {
     cursor: pointer;
 }
 
-/* Responsive Header */
-@media (max-width: 768px) {
-    .header__nav {
-        gap: var(--spacing-md);
-        font-size: 0.9rem;
-    }
-}
-
 /* ========================================
    HERO
    ======================================== */
 
 .hero {
-    margin-top: 100px;
+    margin-top: 120px;
     padding: var(--spacing-xxl) var(--spacing-md);
-    display: flex;
-    align-items: center;
 }
 
 .hero__container {
@@ -174,23 +166,23 @@ body {
     gap: var(--spacing-xxl);
 }
 
-/* Título Perfecto */
 .hero__title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    white-space: nowrap; /* 🔥 nunca se parte */
-    margin-bottom: var(--spacing-md);
+    font-size: 3.8rem;
+    font-weight: 800;
+    color: #fff;
+    text-shadow:
+        0 0 6px #8A2BE2,
+        0 0 14px #8A2BE2,
+        0 0 24px #8A2BE2;
 }
 
-/* Subtítulo */
 .hero__subtitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-lg);
     line-height: 1.7;
 }
 
-/* Botones */
 .hero__buttons {
     display: flex;
     gap: var(--spacing-md);
@@ -205,63 +197,44 @@ body {
     transition: all var(--transition-fast);
 }
 
-/* Botón primario */
+/* BOTÓN PRIMARIO */
 .btn--primary {
-    background-color: var(--color-accent);
+    background-color: #8A2BE2;
     color: white;
-    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3);
+    box-shadow:
+        0 0 10px rgba(138, 43, 226, 0.7),
+        0 0 20px rgba(138, 43, 226, 0.5);
 }
 
 .btn--primary:hover {
-    background-color: var(--color-accent-hover);
-    transform: translateY(-2px);
+    background-color: #9f4fff;
+    box-shadow:
+        0 0 18px rgba(159, 79, 255, 0.9),
+        0 0 34px rgba(159, 79, 255, 0.7);
 }
 
-/* Botón secundario */
+/* BOTÓN SECUNDARIO */
 .btn--secondary {
     background-color: transparent;
-    color: var(--color-accent);
-    border: 2px solid var(--color-accent);
+    border: 2px solid #c08cff;
+    color: #fff;
 }
 
 .btn--secondary:hover {
-    background-color: var(--color-accent-light);
+    background-color: rgba(138, 43, 226, 0.15);
+    box-shadow:
+        0 0 12px rgba(138, 43, 226, 0.6);
 }
 
-/* Avatar (corregido) */
 .hero__avatar {
-    width: 240px;
-    height: 240px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, #A56BFF, #8A2BE2, #4B0F8A);
-    box-shadow: 0 20px 50px rgba(138, 43, 226, 0.25);
+    background: radial-gradient(circle at 40% 40%, #c67eff, #8A2BE2);
+    box-shadow:
+        0 0 24px rgba(138, 43, 226, 0.5),
+        0 0 40px rgba(138, 43, 226, 0.25);
     margin: auto;
-}
-
-/* Responsive Hero */
-@media (max-width: 768px) {
-    .hero__container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .hero__title {
-        font-size: 2rem;
-    }
-
-    .hero__avatar {
-        width: 200px;
-        height: 200px;
-    }
-
-    .hero__buttons {
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
-    }
 }
 
 /* ========================================
@@ -271,6 +244,15 @@ body {
 .about {
     padding: var(--spacing-xxl) var(--spacing-md);
     background-color: var(--color-bg-alt);
+}
+
+.section__title {
+    font-size: 2.4rem;
+    color: #fff;
+    margin-bottom: var(--spacing-xl);
+    text-shadow:
+        0 0 6px #8A2BE2,
+        0 0 12px #8A2BE2;
 }
 
 .about__container {
@@ -292,23 +274,20 @@ body {
     padding: var(--spacing-xxl) var(--spacing-md);
 }
 
-.skills__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--spacing-lg);
-}
-
 .skill-card {
     padding: var(--spacing-lg);
     background-color: var(--color-bg-alt);
+    color: white;
     border-radius: var(--radius-lg);
     text-align: center;
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(138, 43, 226, 0.35);
     transition: all var(--transition-normal);
+    box-shadow: 0 0 12px rgba(138, 43, 226, 0.15);
 }
 
 .skill-card:hover {
-    border-color: var(--color-accent);
+    border-color: #8A2BE2;
+    box-shadow: 0 0 18px rgba(138, 43, 226, 0.6);
     transform: translateY(-6px);
 }
 
@@ -321,23 +300,19 @@ body {
     background-color: var(--color-bg-alt);
 }
 
-.projects__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--spacing-lg);
-}
-
 .project-card {
     background-color: var(--color-bg);
     border-radius: var(--radius-lg);
     overflow: hidden;
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(138, 43, 226, 0.35);
+    box-shadow: 0 0 12px rgba(138, 43, 226, 0.2);
     transition: all var(--transition-normal);
 }
 
 .project-card:hover {
     transform: translateY(-8px) scale(1.02);
-    border-color: var(--color-accent);
+    border-color: #8A2BE2;
+    box-shadow: 0 0 18px rgba(138, 43, 226, 0.6);
 }
 
 .project-card__image {
@@ -346,57 +321,17 @@ body {
 }
 
 /* ========================================
-   CONTACTO (ARREGLADO 💜)
+   CONTACTO
    ======================================== */
 
 .contact {
     padding: var(--spacing-xxl) var(--spacing-md);
 }
 
-.contact__container {
-    max-width: 600px;
-    margin: 0 auto;
-    width: 100%;
-}
-
 .contact__text {
     text-align: center;
-    color: var(--color-text-secondary);
     margin-bottom: var(--spacing-xl);
-}
-
-.contact__form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-}
-
-.form__group {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.form__label {
-    font-weight: 600;
-}
-
-.form__input,
-.form__textarea {
-    width: 100%;
-    padding: var(--spacing-md);
-    background-color: var(--color-bg-alt);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    font-size: 1rem;
-    margin-top: 0.25rem;
-}
-
-.btn--submit {
-    margin-top: var(--spacing-md);
-    width: 100%;
-    max-width: 350px;
-    align-self: center;
+    color: var(--color-text-secondary);
 }
 
 /* ========================================
@@ -418,9 +353,12 @@ body {
 }
 
 .footer__link {
-    color: var(--color-accent);
+    color: #c08cff;
     text-decoration: none;
-    margin-left: var(--spacing-md);
+}
+
+.footer__link:hover {
+    text-shadow: 0 0 6px #c08cff;
 }
 
 /* ========================================
@@ -429,7 +367,7 @@ body {
 
 @media (max-width: 480px) {
     .hero__title {
-        font-size: 1.6rem;
+        font-size: 2rem;
     }
 
     .hero__avatar {
@@ -444,4 +382,257 @@ body {
     .btn {
         width: 100%;
     }
+}
+/* ========================================
+   CONTACTO — VERSIÓN CYBERPUNK PRO
+   ======================================== */
+
+.contact {
+    padding: var(--spacing-xxl) var(--spacing-md);
+}
+
+.contact__container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact__text {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xl);
+    font-size: 1.1rem;
+}
+
+/* FORMULARIO CENTRADO */
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+/* LABEL */
+.form__label {
+    text-align: left;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+/* INPUTS CYBERPUNK */
+.form__input,
+.form__textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: var(--radius-md);
+    background-color: #0f0c16;
+    border: 2px solid rgba(138, 43, 226, 0.35);
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: 200ms;
+}
+
+/* BRILLO AL ENFOCAR */
+.form__input:focus,
+.form__textarea:focus {
+    border-color: #8A2BE2;
+    box-shadow: 0 0 12px rgba(138, 43, 226, 0.6);
+}
+
+/* PLACEHOLDER */
+.form__input::placeholder,
+.form__textarea::placeholder {
+    color: #b8a9d9;
+}
+
+/* BOTÓN */
+.btn--submit {
+    background-color: #8A2BE2;
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 14px;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: 200ms;
+    box-shadow: 0 0 12px rgba(138, 43, 226, 0.5);
+}
+
+.btn--submit:hover {
+    background-color: #9f4fff;
+    box-shadow: 0 0 20px rgba(159, 79, 255, 0.8);
+}
+/* ========================================
+   FIX — HABILIDADES CYBERPUNK PRO
+   ======================================== */
+
+.skills__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.skill-card {
+    padding: 1.5rem;
+    background-color: #0f0c16;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(138, 43, 226, 0.35);
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.2);
+    transition: 250ms;
+}
+
+.skill-card:hover {
+    border-color: #8A2BE2;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+    transform: translateY(-4px);
+}
+
+
+
+/* ========================================
+   FIX — PROYECTOS CYBERPUNK PRO
+   ======================================== */
+
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background-color: #0f0c16;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(138, 43, 226, 0.35);
+    box-shadow: 0 0 12px rgba(138, 43, 226, 0.2);
+    transition: 250ms;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: #8A2BE2;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+}
+
+.project-card__image {
+    height: 160px;
+    background: linear-gradient(135deg, #8A2BE2, #6416A5);
+}
+
+.project-card__content {
+    padding: 1.5rem;
+}
+
+.project-card__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.project-card__description {
+    margin-top: 0.5rem;
+    color: var(--color-text-secondary);
+}
+
+.project-card__tech {
+    margin-top: 0.5rem;
+    color: #c8aaff;
+    font-size: 0.9rem;
+}
+/* ========================================
+   PROYECTOS — DISEÑO C v2 (Bordes Más Grandes)
+   ======================================== */
+
+/* GRID */
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.8rem;
+    margin-top: 3rem;
+}
+
+/* TARJETA BASE */
+.project-card {
+    background: #0b0912;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    padding: 4px; /* bordes más gruesos */
+    transition: 300ms ease;
+}
+
+/* BORDE NEÓN EXTERIOR GRUESO */
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    border: 3px solid #8A2BE2; /* más grueso */
+    box-shadow:
+        0 0 14px #8A2BE2,
+        0 0 26px rgba(138, 43, 226, 0.65),
+        0 0 38px rgba(138, 43, 226, 0.4);
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* BORDE INTERIOR MÁS NOTORIO */
+.project-card::after {
+    content: "";
+    position: absolute;
+    inset: 6px; /* separación mayor */
+    border-radius: 16px;
+    border: 3px solid rgba(255, 255, 255, 0.20); /* más grueso */
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* HOVER — AÚN MÁS GLORIOSO */
+.project-card:hover {
+    transform: translateY(-8px) scale(1.04);
+}
+
+.project-card:hover::before {
+    box-shadow:
+        0 0 22px #b574ff,
+        0 0 40px rgba(181, 116, 255, 0.9),
+        0 0 55px rgba(181, 116, 255, 0.6);
+}
+
+/* IMAGEN SUPERIOR */
+.project-card__image {
+    height: 190px;
+    background: linear-gradient(135deg, #8A2BE2, #6416A5);
+    border-bottom: 2px solid rgba(138, 43, 226, 0.5); /* borde más fuerte */
+}
+
+/* CONTENIDO */
+.project-card__content {
+    padding: 1.7rem;
+    position: relative;
+    z-index: 5;
+}
+
+.project-card__title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.6rem;
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+}
+
+.project-card__description {
+    color: #d0c2eb;
+    margin-bottom: 0.8rem;
+    line-height: 1.55;
+}
+
+.project-card__tech {
+    font-size: 0.95rem;
+    color: #e3c6ff;
+    opacity: 0.95;
 }
