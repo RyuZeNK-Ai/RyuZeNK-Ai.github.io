@@ -152,7 +152,6 @@ body {
 /* ========================================
    HERO
    ======================================== */
-
 .hero {
     margin-top: 120px;
     padding: var(--spacing-xxl) var(--spacing-md);
@@ -197,7 +196,6 @@ body {
     transition: all var(--transition-fast);
 }
 
-/* BOTÓN PRIMARIO */
 .btn--primary {
     background-color: #8A2BE2;
     color: white;
@@ -213,7 +211,6 @@ body {
         0 0 34px rgba(159, 79, 255, 0.7);
 }
 
-/* BOTÓN SECUNDARIO */
 .btn--secondary {
     background-color: transparent;
     border: 2px solid #c08cff;
@@ -240,7 +237,6 @@ body {
 /* ========================================
    ACERCA
    ======================================== */
-
 .about {
     padding: var(--spacing-xxl) var(--spacing-md);
     background-color: var(--color-bg-alt);
@@ -266,206 +262,58 @@ body {
     gap: var(--spacing-xl);
 }
 
+.about__text p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.about__highlights {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.highlight-card {
+    background-color: #0f0c16;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(138, 43, 226, 0.35);
+    transition: all var(--transition-normal);
+}
+
+.highlight-card:hover {
+    border-color: #8A2BE2;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+    transform: translateY(-4px);
+}
+
+.highlight-card__icon {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.highlight-card__title {
+    color: #fff;
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.1rem;
+}
+
+.highlight-card__text {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
 /* ========================================
    HABILIDADES
    ======================================== */
-
 .skills {
     padding: var(--spacing-xxl) var(--spacing-md);
 }
 
-.skill-card {
-    padding: var(--spacing-lg);
-    background-color: var(--color-bg-alt);
-    color: white;
-    border-radius: var(--radius-lg);
-    text-align: center;
-    border: 1px solid rgba(138, 43, 226, 0.35);
-    transition: all var(--transition-normal);
-    box-shadow: 0 0 12px rgba(138, 43, 226, 0.15);
-}
-
-.skill-card:hover {
-    border-color: #8A2BE2;
-    box-shadow: 0 0 18px rgba(138, 43, 226, 0.6);
-    transform: translateY(-6px);
-}
-
-/* ========================================
-   PROYECTOS
-   ======================================== */
-
-.projects {
-    padding: var(--spacing-xxl) var(--spacing-md);
-    background-color: var(--color-bg-alt);
-}
-
-.project-card {
-    background-color: var(--color-bg);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    border: 1px solid rgba(138, 43, 226, 0.35);
-    box-shadow: 0 0 12px rgba(138, 43, 226, 0.2);
-    transition: all var(--transition-normal);
-}
-
-.project-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    border-color: #8A2BE2;
-    box-shadow: 0 0 18px rgba(138, 43, 226, 0.6);
-}
-
-.project-card__image {
-    height: 200px;
-    background: linear-gradient(135deg, #8A2BE2, #6416A5);
-}
-
-/* ========================================
-   CONTACTO
-   ======================================== */
-
-.contact {
-    padding: var(--spacing-xxl) var(--spacing-md);
-}
-
-.contact__text {
-    text-align: center;
-    margin-bottom: var(--spacing-xl);
-    color: var(--color-text-secondary);
-}
-
-/* ========================================
-   FOOTER
-   ======================================== */
-
-.footer {
-    background-color: var(--color-bg-alt);
-    padding: var(--spacing-lg) var(--spacing-md);
-    margin-top: var(--spacing-xl);
-}
-
-.footer__content {
+.skills__container {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
-
-.footer__link {
-    color: #c08cff;
-    text-decoration: none;
-}
-
-.footer__link:hover {
-    text-shadow: 0 0 6px #c08cff;
-}
-
-/* ========================================
-   MOBILE EXTRA
-   ======================================== */
-
-@media (max-width: 480px) {
-    .hero__title {
-        font-size: 2rem;
-    }
-
-    .hero__avatar {
-        width: 180px;
-        height: 180px;
-    }
-
-    .hero__buttons {
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
-    }
-}
-/* ========================================
-   CONTACTO — VERSIÓN CYBERPUNK PRO
-   ======================================== */
-
-.contact {
-    padding: var(--spacing-xxl) var(--spacing-md);
-}
-
-.contact__container {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.contact__text {
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-xl);
-    font-size: 1.1rem;
-}
-
-/* FORMULARIO CENTRADO */
-.contact__form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-lg);
-}
-
-/* LABEL */
-.form__label {
-    text-align: left;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 4px;
-}
-
-/* INPUTS CYBERPUNK */
-.form__input,
-.form__textarea {
-    width: 100%;
-    padding: 14px;
-    border-radius: var(--radius-md);
-    background-color: #0f0c16;
-    border: 2px solid rgba(138, 43, 226, 0.35);
-    color: #fff;
-    font-size: 1rem;
-    outline: none;
-    transition: 200ms;
-}
-
-/* BRILLO AL ENFOCAR */
-.form__input:focus,
-.form__textarea:focus {
-    border-color: #8A2BE2;
-    box-shadow: 0 0 12px rgba(138, 43, 226, 0.6);
-}
-
-/* PLACEHOLDER */
-.form__input::placeholder,
-.form__textarea::placeholder {
-    color: #b8a9d9;
-}
-
-/* BOTÓN */
-.btn--submit {
-    background-color: #8A2BE2;
-    border: none;
-    color: white;
-    font-weight: 600;
-    padding: 14px;
-    cursor: pointer;
-    border-radius: var(--radius-md);
-    transition: 200ms;
-    box-shadow: 0 0 12px rgba(138, 43, 226, 0.5);
-}
-
-.btn--submit:hover {
-    background-color: #9f4fff;
-    box-shadow: 0 0 20px rgba(159, 79, 255, 0.8);
-}
-/* ========================================
-   FIX — HABILIDADES CYBERPUNK PRO
-   ======================================== */
 
 .skills__grid {
     display: grid;
@@ -490,64 +338,24 @@ body {
     transform: translateY(-4px);
 }
 
-
-
-/* ========================================
-   FIX — PROYECTOS CYBERPUNK PRO
-   ======================================== */
-
-.projects__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.project-card {
-    background-color: #0f0c16;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid rgba(138, 43, 226, 0.35);
-    box-shadow: 0 0 12px rgba(138, 43, 226, 0.2);
-    transition: 250ms;
-}
-
-.project-card:hover {
-    transform: translateY(-6px);
-    border-color: #8A2BE2;
-    box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
-}
-
-.project-card__image {
-    height: 160px;
-    background: linear-gradient(135deg, #8A2BE2, #6416A5);
-}
-
-.project-card__content {
-    padding: 1.5rem;
-}
-
-.project-card__title {
-    font-size: 1.2rem;
-    font-weight: 700;
+.skill-card__name {
     color: white;
+    font-weight: 600;
 }
 
-.project-card__description {
-    margin-top: 0.5rem;
-    color: var(--color-text-secondary);
-}
-
-.project-card__tech {
-    margin-top: 0.5rem;
-    color: #c8aaff;
-    font-size: 0.9rem;
-}
 /* ========================================
-   PROYECTOS — DISEÑO C v2 (Bordes Más Grandes)
+   PROYECTOS
    ======================================== */
+.projects {
+    padding: var(--spacing-xxl) var(--spacing-md);
+    background-color: var(--color-bg-alt);
+}
 
-/* GRID */
+.projects__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .projects__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -555,23 +363,21 @@ body {
     margin-top: 3rem;
 }
 
-/* TARJETA BASE */
 .project-card {
     background: #0b0912;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
-    padding: 4px; /* bordes más gruesos */
+    padding: 4px;
     transition: 300ms ease;
 }
 
-/* BORDE NEÓN EXTERIOR GRUESO */
 .project-card::before {
     content: "";
     position: absolute;
     inset: 0;
     border-radius: 20px;
-    border: 3px solid #8A2BE2; /* más grueso */
+    border: 3px solid #8A2BE2;
     box-shadow:
         0 0 14px #8A2BE2,
         0 0 26px rgba(138, 43, 226, 0.65),
@@ -580,18 +386,16 @@ body {
     z-index: 3;
 }
 
-/* BORDE INTERIOR MÁS NOTORIO */
 .project-card::after {
     content: "";
     position: absolute;
-    inset: 6px; /* separación mayor */
+    inset: 6px;
     border-radius: 16px;
-    border: 3px solid rgba(255, 255, 255, 0.20); /* más grueso */
+    border: 3px solid rgba(255, 255, 255, 0.20);
     pointer-events: none;
     z-index: 2;
 }
 
-/* HOVER — AÚN MÁS GLORIOSO */
 .project-card:hover {
     transform: translateY(-8px) scale(1.04);
 }
@@ -603,14 +407,12 @@ body {
         0 0 55px rgba(181, 116, 255, 0.6);
 }
 
-/* IMAGEN SUPERIOR */
 .project-card__image {
     height: 190px;
     background: linear-gradient(135deg, #8A2BE2, #6416A5);
-    border-bottom: 2px solid rgba(138, 43, 226, 0.5); /* borde más fuerte */
+    border-bottom: 2px solid rgba(138, 43, 226, 0.5);
 }
 
-/* CONTENIDO */
 .project-card__content {
     padding: 1.7rem;
     position: relative;
@@ -635,4 +437,178 @@ body {
     font-size: 0.95rem;
     color: #e3c6ff;
     opacity: 0.95;
+}
+
+/* ========================================
+   CONTACTO
+   ======================================== */
+.contact {
+    padding: var(--spacing-xxl) var(--spacing-md);
+}
+
+.contact__container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact__text {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xl);
+    font-size: 1.1rem;
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__label {
+    text-align: left;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.form__input,
+.form__textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: var(--radius-md);
+    background-color: #0f0c16;
+    border: 2px solid rgba(138, 43, 226, 0.35);
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: 200ms;
+    font-family: var(--font-primary);
+}
+
+.form__input:focus,
+.form__textarea:focus {
+    border-color: #8A2BE2;
+    box-shadow: 0 0 12px rgba(138, 43, 226, 0.6);
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+    color: #b8a9d9;
+}
+
+.btn--submit {
+    background-color: #8A2BE2;
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 14px;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: 200ms;
+    box-shadow: 0 0 12px rgba(138, 43, 226, 0.5);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+}
+
+.btn--submit:hover {
+    background-color: #9f4fff;
+    box-shadow: 0 0 20px rgba(159, 79, 255, 0.8);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+    background-color: var(--color-bg-alt);
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.footer__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__copyright {
+    color: var(--color-text-secondary);
+}
+
+.footer__links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.footer__link {
+    color: #c08cff;
+    text-decoration: none;
+    transition: 200ms;
+}
+
+.footer__link:hover {
+    text-shadow: 0 0 6px #c08cff;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    .hero__container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        text-align: center;
+    }
+    
+    .hero__title {
+        font-size: 2.8rem;
+    }
+    
+    .about__content {
+        grid-template-columns: 1fr;
+    }
+    
+    .header__nav {
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__title {
+        font-size: 2rem;
+    }
+
+    .hero__avatar {
+        width: 180px;
+        height: 180px;
+    }
+
+    .hero__buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+    
+    .footer__content {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+    
+    .header__nav {
+        display: none;
+    }
+    
+    .section__title {
+        font-size: 2rem;
+    }
 }
