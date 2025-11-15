@@ -303,46 +303,209 @@ body {
     font-size: 0.9rem;
 }
 
-/* ========================================
-   HABILIDADES
-   ======================================== */
-.skills {
-    padding: var(--spacing-xxl) var(--spacing-md);
+/* ALTERNATIVA - 3 COLUMNAS */
+.skills-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columnas */
+    gap: 0.8rem;
 }
 
-.skills__container {
-    max-width: 1200px;
-    margin: 0 auto;
+.skills-category {
+    padding: 0.8rem;
 }
 
 .skills__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(2, 1fr); /* 2 botones por fila */
+    gap: 0.3rem;
 }
 
 .skill-card {
-    padding: 1.5rem;
-    background-color: #0f0c16;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid rgba(138, 43, 226, 0.35);
-    box-shadow: 0 0 10px rgba(138, 43, 226, 0.2);
-    transition: 250ms;
-}
-
-.skill-card:hover {
-    border-color: #8A2BE2;
-    box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
-    transform: translateY(-4px);
+    min-height: 35px;
+    padding: 0.4rem 0.2rem;
 }
 
 .skill-card__name {
-    color: white;
-    font-weight: 600;
+    font-size: 0.8rem;
 }
 
+/* ALTERNATIVA - 3 COLUMNAS */
+.skills-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columnas */
+    gap: 0.8rem;
+}
+
+.skills-category {
+    padding: 0.8rem;
+}
+
+.skills__grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 botones por fila */
+    gap: 0.3rem;
+}
+
+.skill-card {
+    min-height: 35px;
+    padding: 0.4rem 0.2rem;
+}
+
+.skill-card__name {
+    font-size: 0.8rem;
+}
+
+/* ========================================
+   HABILIDADES - RyuZeNK.Ai NEON v6 (5 columnas)
+   ======================================== */
+
+.skills {
+    background: linear-gradient(180deg, #0d0b14, #13101e);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+/* Contenedor general */
+.skills__container {
+    max-width: 1400px; /* Más ancho para 5 columnas */
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* GRID DE 5 COLUMNAS */
+.skills__categories-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 🔥 AQUÍ EL CAMBIO PRINCIPAL */
+    gap: 2rem;
+    margin-top: 2.5rem;
+    max-width: 1350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Tarjetas de categoría */
+.skills-category {
+    position: relative;
+    background: rgba(15, 12, 22, 0.85);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(138, 43, 226, 0.35);
+    text-align: center;
+
+    /* PROFUNDIDAD */
+    box-shadow:
+        0 0 14px rgba(138, 43, 226, 0.25),
+        inset 0 0 10px rgba(138, 43, 226, 0.18);
+
+    transition: 0.25s ease;
+}
+
+/* Línea holográfica superior */
+.skills-category::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8A2BE2, transparent);
+    opacity: 0.65;
+}
+
+/* Hover */
+.skills-category:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow:
+        0 0 22px rgba(138, 43, 226, 0.45),
+        inset 0 0 14px rgba(138, 43, 226, 0.28);
+    border-color: #BC13FE;
+}
+
+/* Título interno */
+.skills-category__title {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.9);
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(138, 43, 226, 0.5);
+}
+
+/* GRID DE SKILLS DENTRO DE CADA TARJETA */
+.skills__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+    justify-items: center;
+}
+
+/* Skill individual */
+.skill-card {
+    padding: 0.6rem 0.8rem;
+    background: linear-gradient(135deg, #151029, #0f0c16);
+    border-radius: 8px;
+    border: 1px solid rgba(138, 43, 226, 0.4);
+    width: 100%;
+    max-width: 130px;
+
+    box-shadow: 0 0 8px rgba(138, 43, 226, 0.25);
+    transition: 0.2s ease-out;
+}
+
+/* Hover del skill */
+.skill-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(188, 19, 254, 0.7);
+    border-color: #BC13FE;
+}
+
+/* Nombre del skill */
+.skill-card__name {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-shadow: 0 0 6px rgba(138, 43, 226, 0.8);
+    margin: 0;
+}
+
+/* Título principal */
+.section__title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 3.5rem;
+    text-shadow:
+        0 0 8px #8A2BE2,
+        0 0 16px #8A2BE2;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+/* Tablet grande */
+@media (max-width: 1200px) {
+    .skills__categories-grid {
+        grid-template-columns: repeat(3, 1fr); /* 🔥 3 columnas en tablet */
+    }
+}
+
+/* Tablet / móviles grandes */
+@media (max-width: 768px) {
+    .skills__categories-grid {
+        grid-template-columns: repeat(2, 1fr); /* 🔥 2 columnas */
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    .skills__categories-grid {
+        grid-template-columns: 1fr; /* 🔥 1 columna */
+    }
+
+    .skill-card {
+        max-width: 110px;
+    }
+}
 /* ========================================
    PROYECTOS
    ======================================== */
