@@ -653,8 +653,10 @@ body {
 }
 
 /* ========================================
-   RESPONSIVE
+   RESPONSIVE COMPLETO
    ======================================== */
+
+/* TABLETS */
 @media (max-width: 768px) {
     .hero__container {
         grid-template-columns: 1fr;
@@ -668,16 +670,61 @@ body {
 
     .about__container {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
     }
 
     .header__nav {
         gap: var(--spacing-md);
     }
+    
+    /* Habilidades responsivas */
+    .skills__categories-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .skills-category {
+        margin: 0 auto;
+        max-width: 300px;
+    }
+    
+    /* Mejor espaciado general */
+    .about, .skills, .projects, .contact {
+        padding: 3rem 1rem;
+    }
+    
+    .section__title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+    
+    /* Acerca de en tablet */
+    .about__text p {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: center;
+    }
+    
+    .about__panel {
+        margin: 0 auto;
+        max-width: 300px;
+    }
 }
 
+/* MÓVILES PEQUEÑOS */
 @media (max-width: 480px) {
     .hero__title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.2;
+        padding: 0 1rem;
+    }
+    
+    .hero__subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
     }
 
     .hero__avatar {
@@ -706,9 +753,65 @@ body {
     .section__title {
         font-size: 2rem;
     }
-}
-
-/* ========================================
+    
+    /* Hero/Inicio en móvil */
+    .hero {
+        margin-top: 80px;
+        padding: 2rem 1rem;
+    }
+    
+    .hero__container {
+        gap: 1.5rem;
+    }
+    
+    .hero__content {
+        text-align: center;
+    }
+    
+    .hero__buttons {
+        justify-content: center;
+    }
+    
+    /* Grid de habilidades en móvil */
+    .skills__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .skill-card {
+        max-width: 100%;
+        padding: 0.5rem 0.3rem;
+    }
+    
+    .skill-card__name {
+        font-size: 0.85rem;
+    }
+    
+    /* Botones sociales más compactos */
+    .contact__social-links {
+        flex-direction: column;
+        gap: 0.8rem;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    
+    .contact__social-link {
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Proyectos en móvil */
+    .projects__grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .project-card {
+        margin: 0 auto;
+        max-width: 300px;
+    }
+}/* ========================================
    REDES SOCIALES EN CONTACTO
    ======================================== */
 .contact__social {
