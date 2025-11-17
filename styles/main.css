@@ -132,40 +132,52 @@ body {
 }
 
 /* ========================================
-   HERO
+   HERO - CENTRADO
    ======================================== */
 .hero {
     margin-top: 120px;
     padding: var(--spacing-xxl) var(--spacing-md);
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .hero__container {
     display: grid;
-    grid-template-columns: 1.3fr 0.7fr; /* columna izquierda MÁS grande */
-    max-width: 1700px;
+    grid-template-columns: 1.3fr 0.7fr;
+    max-width: 1200px; /* Reducido de 1700px */
     margin: 0 auto;
     gap: var(--spacing-xxl);
     align-items: center;
-    padding-left: 60px; /* Ajusta alineación global */
+    width: 100%;
+    /* padding-left: 60px; ELIMINADO */
 }
 
+.hero__content {
+    text-align: left;
+}
 
-.hero {
-    text-align: left; /* mantiene el estilo */
+.hero__image {
     display: flex;
-    justify-content: center; /* CENTRA TODO EL HERO */
-    width: 100%;
+    justify-content: center;
 }
 
 .hero__title {
-    font-size: 3.8rem;
+    font-size: 3.4rem;
     font-weight: 800;
     color: #fff;
     text-shadow:
         0 0 6px #8A2BE2,
         0 0 14px #8A2BE2,
         0 0 24px #8A2BE2;
+    line-height: 1.1;
 }
+
+/* O en el HTML podrías hacer: */
+<h1 class="hero__title">
+    RyuZeNK.Ai<br>
+    Nicolás Peña
+</h1>
 
 .hero__subtitle {
     font-size: 1.2rem;
@@ -179,7 +191,7 @@ body {
     gap: var(--spacing-md);
 }
 
-/* BOTONES HERO (como antes) */
+/* BOTONES HERO */
 .btn {
     padding: var(--spacing-md) var(--spacing-lg);
     border-radius: var(--radius-md);
@@ -221,14 +233,22 @@ body {
 .hero__avatar {
     width: 260px;
     height: 260px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 40% 40%, #c67eff, #8A2BE2);
+    border-radius: 50%;          /* 🔥 La foto será circular */
+    overflow: hidden;            /* 🔥 Recorta todo lo que sobresalga */
+    margin: auto;
+
+    /* Glow violeta igual que antes */
     box-shadow:
         0 0 24px rgba(138, 43, 226, 0.5),
         0 0 40px rgba(138, 43, 226, 0.25);
-    margin: auto;
 }
 
+.hero__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;           /* 🔥 Evita deformaciones */
+    object-position: center;     /* 🔥 Centra tu cara */
+}
 /* ========================================
    ACERCA DE — Panel Unificado Neon
    ======================================== */
