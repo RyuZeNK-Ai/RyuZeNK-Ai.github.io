@@ -1,23 +1,18 @@
 /* ========================================
-   ESTILOS GLOBALES Y VARIABLES
+   ESTILOS GLOBALES Y VARIABLES (MODO OSCURO)
    ======================================== */
 :root {
-    /* Colores - Modo Claro */
-    --color-bg: #fafafa;
-    --color-bg-alt: #f5f5f5;
-    --color-text: #1a1a1a;
-    --color-text-secondary: #666666;
-    --color-border: #e0e0e0;
-    --color-accent: #8A2BE2;
-    --color-accent-hover: #7a1fd2;
-    --color-accent-light: #f3e5ff;
+    /* Colores base */
+    --color-bg: #0a0a0f;
+    --color-bg-alt: #111018;
+    --color-text: #f5f5f5;
+    --color-text-secondary: #c2b6d0;
+    --color-border: #2f2540;
 
-    /* Modo Oscuro */
-    --color-bg-dark: #0a0a0f;
-    --color-bg-alt-dark: #111018;
-    --color-text-dark: #f5f5f5;
-    --color-text-secondary-dark: #c2b6d0;
-    --color-border-dark: #2f2540;
+    /* Acentos */
+    --color-accent: #8A2BE2;
+    --color-accent-hover: #9f4fff;
+    --color-accent-light: #f3e5ff;
 
     /* Tipografía */
     --font-primary: 'Poppins', sans-serif;
@@ -42,17 +37,8 @@
 }
 
 /* ========================================
-   MODO OSCURO
+   RESET + BASE
    ======================================== */
-body.theme-dark {
-    --color-bg: var(--color-bg-dark);
-    --color-bg-alt: var(--color-bg-alt-dark);
-    --color-text: var(--color-text-dark);
-    --color-text-secondary: var(--color-text-secondary-dark);
-    --color-border: var(--color-border-dark);
-}
-
-/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -65,9 +51,13 @@ html {
 
 body {
     font-family: var(--font-primary);
-    background-color: var(--color-bg);
+    background: linear-gradient(180deg,
+        #0a0a0f 0%,
+        #100d17 40%,
+        #120f1c 70%,
+        #0a0a0f 100%
+    );
     color: var(--color-text);
-    transition: background-color var(--transition-normal), color var(--transition-normal);
     line-height: 1.6;
 }
 
@@ -141,13 +131,6 @@ body {
     width: 100%;
 }
 
-.header__theme-toggle {
-    font-size: 1.5rem;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-}
-
 /* ========================================
    HERO
    ======================================== */
@@ -158,10 +141,20 @@ body {
 
 .hero__container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.3fr 0.7fr; /* columna izquierda MÁS grande */
     max-width: 1700px;
     margin: 0 auto;
     gap: var(--spacing-xxl);
+    align-items: center;
+    padding-left: 60px; /* Ajusta alineación global */
+}
+
+
+.hero {
+    text-align: left; /* mantiene el estilo */
+    display: flex;
+    justify-content: center; /* CENTRA TODO EL HERO */
+    width: 100%;
 }
 
 .hero__title {
@@ -186,6 +179,7 @@ body {
     gap: var(--spacing-md);
 }
 
+/* BOTONES HERO (como antes) */
 .btn {
     padding: var(--spacing-md) var(--spacing-lg);
     border-radius: var(--radius-md);
@@ -193,6 +187,8 @@ body {
     cursor: pointer;
     text-decoration: none;
     transition: all var(--transition-fast);
+    font-family: var(--font-primary);
+    font-size: 1rem;
 }
 
 .btn--primary {
@@ -234,16 +230,27 @@ body {
 }
 
 /* ========================================
-   ACERCA DE — Panel Unificado Neon v8
+   ACERCA DE — Panel Unificado Neon
    ======================================== */
-
 .about {
-    background: linear-gradient(180deg,
-            #0b0a11 0%,
-            #13101e 35%,
-            #13101e 65%,
-            #0b0a11 100%);
+    background: linear-gradient(
+        180deg,
+        #0b0a11 0%,
+        #13101e 35%,
+        #13101e 65%,
+        #0b0a11 100%
+    );
     padding: 6rem 0;
+}
+
+.section__title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 3.5rem;
+    text-shadow:
+        0 0 8px #8A2BE2,
+        0 0 16px #8A2BE2;
 }
 
 .about__container {
@@ -262,22 +269,20 @@ body {
     color: #e6e6e6;
 }
 
-/* PANEL UNIFICADO */
+/* Panel */
 .about__panel {
     background: rgba(15, 12, 22, 0.85);
     border: 1px solid rgba(138, 43, 226, 0.35);
     border-radius: 20px;
     padding: 2rem;
     position: relative;
-
     box-shadow:
         0 0 22px rgba(138, 43, 226, 0.25),
         inset 0 0 14px rgba(138, 43, 226, 0.18);
-
     backdrop-filter: blur(4px);
 }
 
-/* Glow superior */
+/* línea glow arriba */
 .about__panel::before {
     content: "";
     position: absolute;
@@ -289,7 +294,7 @@ body {
     opacity: 0.7;
 }
 
-/* ITEM INTERNO */
+/* items internos */
 .about__item {
     display: flex;
     gap: 1.2rem;
@@ -303,12 +308,10 @@ body {
     transform: translateX(6px);
 }
 
-/* ICONO */
 .about__icon {
     font-size: 1.8rem;
 }
 
-/* TÍTULOS */
 .about__title {
     color: #fff;
     font-size: 1.2rem;
@@ -316,60 +319,24 @@ body {
     margin-bottom: 0.2rem;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .about__container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-}
-
-/* ===============================
-   ANIMACIÓN - Fade-in Neon
-   =============================== */
-
-.about__panel {
-    opacity: 0;
-    transform: translateY(30px);
-    transition:
-        opacity 0.8s ease-out,
-        transform 0.8s ease-out,
-        box-shadow 1.2s ease-out;
-}
-
-.about__panel.visible {
-    opacity: 1;
-    transform: translateY(0);
-    box-shadow:
-        0 0 28px rgba(138, 43, 226, 0.35),
-        inset 0 0 20px rgba(138, 43, 226, 0.22);
-}
-
-
-
 /* ========================================
-   HABILIDADES - RyuZeNK.Ai NEON v6 (5 columnas)
+   HABILIDADES - NEON 5 COLUMNAS
    ======================================== */
-
 .skills {
     background: linear-gradient(180deg, #0d0b14, #13101e);
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
 
-/* Contenedor general */
 .skills__container {
     max-width: 1400px;
-    /* Más ancho para 5 columnas */
     margin: 0 auto;
     padding: 0 var(--spacing-md);
 }
 
-/* GRID DE 5 COLUMNAS */
 .skills__categories-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    /* 🔥 AQUÍ EL CAMBIO PRINCIPAL */
     gap: 2rem;
     margin-top: 2.5rem;
     max-width: 1350px;
@@ -377,7 +344,6 @@ body {
     margin-right: auto;
 }
 
-/* Tarjetas de categoría */
 .skills-category {
     position: relative;
     background: rgba(15, 12, 22, 0.85);
@@ -385,16 +351,12 @@ body {
     border-radius: 16px;
     border: 1px solid rgba(138, 43, 226, 0.35);
     text-align: center;
-
-    /* PROFUNDIDAD */
     box-shadow:
         0 0 14px rgba(138, 43, 226, 0.25),
         inset 0 0 10px rgba(138, 43, 226, 0.18);
-
     transition: 0.25s ease;
 }
 
-/* Línea holográfica superior */
 .skills-category::before {
     content: "";
     position: absolute;
@@ -406,7 +368,6 @@ body {
     opacity: 0.65;
 }
 
-/* Hover */
 .skills-category:hover {
     transform: translateY(-6px) scale(1.03);
     box-shadow:
@@ -415,7 +376,6 @@ body {
     border-color: #BC13FE;
 }
 
-/* Título interno */
 .skills-category__title {
     color: #fff;
     font-size: 1.2rem;
@@ -426,7 +386,6 @@ body {
     border-bottom: 2px solid rgba(138, 43, 226, 0.5);
 }
 
-/* GRID DE SKILLS DENTRO DE CADA TARJETA */
 .skills__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -434,7 +393,6 @@ body {
     justify-items: center;
 }
 
-/* Skill individual */
 .skill-card {
     padding: 0.6rem 0.8rem;
     background: linear-gradient(135deg, #151029, #0f0c16);
@@ -442,68 +400,22 @@ body {
     border: 1px solid rgba(138, 43, 226, 0.4);
     width: 100%;
     max-width: 130px;
-
     box-shadow: 0 0 8px rgba(138, 43, 226, 0.25);
     transition: 0.2s ease-out;
 }
 
-/* Hover del skill */
 .skill-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 0 15px rgba(188, 19, 254, 0.7);
     border-color: #BC13FE;
 }
 
-/* Nombre del skill */
 .skill-card__name {
     color: #fff;
     font-weight: 600;
     font-size: 0.95rem;
     text-shadow: 0 0 6px rgba(138, 43, 226, 0.8);
     margin: 0;
-}
-
-/* Título principal */
-.section__title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #fff;
-    margin-bottom: 3.5rem;
-    text-shadow:
-        0 0 8px #8A2BE2,
-        0 0 16px #8A2BE2;
-}
-
-/* ========================================
-   RESPONSIVE
-   ======================================== */
-
-/* Tablet grande */
-@media (max-width: 1200px) {
-    .skills__categories-grid {
-        grid-template-columns: repeat(3, 1fr);
-        /* 🔥 3 columnas en tablet */
-    }
-}
-
-/* Tablet / móviles grandes */
-@media (max-width: 768px) {
-    .skills__categories-grid {
-        grid-template-columns: repeat(2, 1fr);
-        /* 🔥 2 columnas */
-    }
-}
-
-/* Móviles */
-@media (max-width: 480px) {
-    .skills__categories-grid {
-        grid-template-columns: 1fr;
-        /* 🔥 1 columna */
-    }
-
-    .skill-card {
-        max-width: 110px;
-    }
 }
 
 /* ========================================
@@ -734,7 +646,7 @@ body {
         font-size: 2.8rem;
     }
 
-    .about__content {
+    .about__container {
         grid-template-columns: 1fr;
     }
 
