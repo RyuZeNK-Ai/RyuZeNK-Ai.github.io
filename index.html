@@ -213,70 +213,60 @@
         </div>
     </section>
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="contact">
-        <div class="contact__container">
-            <h2 class="section__title">Contacto</h2>
+<!-- CONTACTO -->
+<section id="contacto" class="contact">
+    <div class="contact__container">
+        <h2 class="section__title">Contacto</h2>
 
-            <p class="contact__text">
-                ¿Tienes una idea o proyecto? Escríbeme, y trabajemos juntos.
-            </p>
+        <p class="contact__text">
+            ¿Tienes una idea o proyecto? Escríbeme, y trabajemos juntos.
+        </p>
 
-            <form class="contact__form">
-                <div class="form__group">
-                    <label class="form__label">Nombre</label>
-                    <input class="form__input" type="text" placeholder="Tu nombre" />
-                </div>
+        <form action="https://formspree.io/f/mrbrvvwa" method="POST" class="contact__form">
+            <div class="form__group">
+                <label class="form__label">Nombre</label>
+                <input class="form__input" type="text" name="name" placeholder="Tu nombre" required />
+            </div>
 
-                <div class="form__group">
-                    <label class="form__label">Correo Electrónico</label>
-                    <input class="form__input" type="email" placeholder="tu@email.com"/>
-                </div>
+            <div class="form__group">
+                <label class="form__label">Correo Electrónico</label>
+                <input class="form__input" type="email" name="email" placeholder="tu@email.com" required />
+            </div>
 
-                <div class="form__group">
-                    <label class="form__label">Mensaje</label>
-                    <textarea class="form__textarea" rows="5" placeholder="Escribe tu mensaje..."></textarea>
-                </div>
+            <div class="form__group">
+                <label class="form__label">Mensaje</label>
+                <textarea class="form__textarea" name="message" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+            </div>
 
-                <button class="btn btn--primary btn--submit">Enviar Mensaje</button>
-            </form>
+            <button type="submit" class="btn btn--primary btn--submit">Enviar Mensaje</button>
+        </form>
 
+        <!-- 🔥 SECCIÓN DE REDES SOCIALES ACTUALIZADA -->
+        <div class="contact__social">
+            <p class="contact__social-text">O contáctame directamente por:</p>
+            <div class="contact__social-links">
+                <a href="https://github.com/RyuZeNK-Ai" class="contact__social-link">
+                    <span class="contact__social-icon">💻</span>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/nicolas-peña-fullstack" class="contact__social-link">
+                    <span class="contact__social-icon">💼</span>
+                    LinkedIn
+                </a>
+                <a href="https://www.instagram.com/ryuzenk.ai" class="contact__social-link">
+                    <span class="contact__social-icon">📷</span>
+                    Instagram
+                </a>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- FOOTER -->
+     <!-- FOOTER SIMPLIFICADO -->
     <footer class="footer">
         <div class="footer__content">
             <p class="footer__copyright">
                 © 2025 RyuZeNK.Ai — Todos los derechos reservados.
             </p>
-
-            <div class="footer__links">
-                <a href="https://github.com/RyuZeNK-Ai" class="footer__link">GitHub</a>
-                <a href="#" class="footer__link">LinkedIn</a>
-            </div>
         </div>
     </footer>
-
-    <script src="scripts/main.js"></script>
-</body>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const panel = document.querySelector(".about__panel");
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    panel.classList.add("visible");
-                }
-            });
-        },
-        { threshold: 0.3 }
-    );
-
-    observer.observe(panel);
-});
-</script>
-
-</html>
