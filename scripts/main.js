@@ -18,8 +18,9 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         const target = document.querySelector(id);
         
         if (target) {
-            const headerHeight = header.offsetHeight;
-            const targetPosition = target.offsetTop - headerHeight - 40; // ← CAMBIADO A 40px
+            // 🔥 CALCULAR EN TIEMPO REAL - no usar variable cacheada
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight - 40;
             
             window.scrollTo({
                 top: targetPosition,
