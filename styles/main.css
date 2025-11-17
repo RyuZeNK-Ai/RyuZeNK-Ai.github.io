@@ -159,7 +159,7 @@ body {
 .hero__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    max-width: 1200px;
+    max-width: 1700px;
     margin: 0 auto;
     gap: var(--spacing-xxl);
 }
