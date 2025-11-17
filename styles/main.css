@@ -47,6 +47,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* 🔥 FIX PARA SCROLL */
 }
 
 /* 🔥 MODIFICACIÓN 1: Fondo base con scroll fijo */
@@ -60,7 +61,7 @@ body {
     );
     color: var(--color-text);
     line-height: 1.6;
-    background-attachment: fixed; /* ¡LA CLAVE! Mantiene el fondo estático. */
+    background-attachment: fixed;
 }
 
 /* ========================================
@@ -142,18 +143,16 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-
 }
 
 .hero__container {
     display: grid;
     grid-template-columns: 1.3fr 0.7fr;
-    max-width: 1200px; /* Reducido de 1700px */
+    max-width: 1200px;
     margin: 0 auto;
     gap: var(--spacing-xxl);
     align-items: center;
     width: 100%;
-    /* padding-left: 60px; ELIMINADO */
 }
 
 .hero__content {
@@ -230,12 +229,10 @@ body {
 .hero__avatar {
     width: 260px;
     height: 260px;
-    border-radius: 50%;         /* 🔥 La foto será circular */
-    background: radial-gradient(circle at 40% 40%, #c67eff, #8A2BE2); /* RESTAURADO: Fondo para que destaque*/
-    overflow: hidden;           /* 🔥 Recorta todo lo que sobresalga */
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, #c67eff, #8A2BE2);
+    overflow: hidden;
     margin: auto;
-
-    /* Glow violeta igual que antes */
     box-shadow:
         0 0 24px rgba(138, 43, 226, 0.5),
         0 0 40px rgba(138, 43, 226, 0.25);
@@ -244,15 +241,14 @@ body {
 .hero__avatar img {
     width: 100%;
     height: 100%;
-    object-fit: cover;           /* 🔥 Evita deformaciones */
-    object-position: center;     /* 🔥 Centra tu cara */
+    object-fit: cover;
+    object-position: center;
 }
+
 /* ========================================
    ACERCA DE — Panel Unificado Neon
    ======================================== */
-/* 🔥 MODIFICACIÓN 2: Quitamos el fondo para que se vea el body */
 .about {
-    /* background: linear-gradient(...) ORIGINAL */
     background: transparent; 
     padding: 6rem 0;
 }
@@ -336,9 +332,7 @@ body {
 /* ========================================
    HABILIDADES - NEON 5 COLUMNAS
    ======================================== */
-/* 🔥 MODIFICACIÓN 3: Quitamos el fondo para que se vea el body */
 .skills {
-    /* background: linear-gradient(180deg, #0d0b14, #13101e); ORIGINAL */
     background: transparent;
     padding-top: 4rem;
     padding-bottom: 4rem;
@@ -437,10 +431,8 @@ body {
 /* ========================================
    PROYECTOS
    ======================================== */
-/* 🔥 MODIFICACIÓN 4: Quitamos el fondo para que se vea el body */
 .projects {
     padding: var(--spacing-xxl) var(--spacing-md);
-    /* background-color: var(--color-bg-alt); ORIGINAL */
     background-color: transparent; 
 }
 
@@ -617,9 +609,7 @@ body {
 /* ========================================
    FOOTER
    ======================================== */
-/* 🔥 MODIFICACIÓN 5: Quitamos el fondo para que se vea el body */
 .footer {
-    /* background-color: var(--color-bg-alt); ORIGINAL */
     background-color: transparent;
     padding: var(--spacing-lg) var(--spacing-md);
     margin-top: var(--spacing-xl);
@@ -650,6 +640,62 @@ body {
 
 .footer__link:hover {
     text-shadow: 0 0 6px #c08cff;
+}
+
+/* ========================================
+   FIX DEFINITIVO PARA SCROLL - TODAS LAS SECCIONES
+   ======================================== */
+#inicio,
+#acerca,
+#habilidades,
+#proyectos,
+#contacto {
+    scroll-margin-top: 100px; /* 🔥 MISMO ESPACIO PARA TODAS */
+}
+
+/* ========================================
+   REDES SOCIALES EN CONTACTO
+   ======================================== */
+.contact__social {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.contact__social-text {
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.contact__social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.contact__social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(138, 43, 226, 0.1);
+    border: 1px solid rgba(138, 43, 226, 0.4);
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact__social-link:hover {
+    background: rgba(138, 43, 226, 0.2);
+    border-color: #8A2BE2;
+    box-shadow: 0 0 12px rgba(138, 43, 226, 0.6);
+    transform: translateY(-2px);
+}
+
+.contact__social-icon {
+    font-size: 1.2rem;
 }
 
 /* ========================================
@@ -711,6 +757,19 @@ body {
     .about__panel {
         margin: 0 auto;
         max-width: 300px;
+    }
+
+    /* 🔥 FIX SCROLL RESPONSIVE */
+    html {
+        scroll-padding-top: 90px;
+    }
+    
+    #inicio,
+    #acerca,
+    #habilidades,
+    #proyectos,
+    #contacto {
+        scroll-margin-top: 90px;
     }
 }
 
@@ -811,49 +870,19 @@ body {
         margin: 0 auto;
         max-width: 300px;
     }
-}/* ========================================
-   REDES SOCIALES EN CONTACTO
-   ======================================== */
-.contact__social {
-    text-align: center;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(138, 43, 226, 0.3);
-}
 
-.contact__social-text {
-    color: var(--color-text-secondary);
-    margin-bottom: 1.5rem;
-}
-
-.contact__social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.contact__social-link {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.5rem;
-    background: rgba(138, 43, 226, 0.1);
-    border: 1px solid rgba(138, 43, 226, 0.4);
-    border-radius: 8px;
-    color: #fff;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.contact__social-link:hover {
-    background: rgba(138, 43, 226, 0.2);
-    border-color: #8A2BE2;
-    box-shadow: 0 0 12px rgba(138, 43, 226, 0.6);
-    transform: translateY(-2px);
-}
-
-.contact__social-icon {
-    font-size: 1.2rem;
+    /* 🔥 FIX SCROLL MÓVIL */
+    html {
+        scroll-padding-top: 80px;
+    }
+    
+    #inicio,
+    #acerca,
+    #habilidades,
+    #proyectos,
+    #contacto {
+        scroll-margin-top: 80px;
+    }
 }
 
 /* RESPONSIVE PARA REDES SOCIALES */
