@@ -61,38 +61,57 @@
         </div>
     </section>
 
-    <!-- ACERCA -->
-    <section id="acerca" class="about">
-        <div class="about__container">
-            <h2 class="section__title">Acerca de</h2>
+   <!-- ===================== ACERCA DE ===================== -->
+<section id="acerca" class="about">
+    <h2 class="section__title">Acerca de</h2>
 
-            <div class="about__content">
-                <div class="about__text">
-                    <p>Soy un desarrollador apasionado por crear soluciones elegantes y eficientes. Me enfoco en construir aplicaciones que combinen diseño limpio, experiencia intuitiva y arquitectura escalable.</p>
-                </div>
+    <div class="about__container">
 
-                <div class="about__highlights">
-                    <div class="highlight-card">
-                        <div class="highlight-card__icon">💡</div>
-                        <h3 class="highlight-card__title">Código Limpio</h3>
-                        <p class="highlight-card__text">Mantenibilidad y claridad ante todo.</p>
-                    </div>
+        <!-- Texto principal -->
+        <div class="about__text">
+            <p>
+                Soy un desarrollador Full Stack apasionado por crear experiencias digitales
+                que mezclan diseño intuitivo, código limpio y una arquitectura sólida.
+                Me enfoco en construir sistemas escalables y estéticamente equilibrados,
+                fusionando creatividad con ingeniería.
+            </p>
+        </div>
 
-                    <div class="highlight-card">
-                        <div class="highlight-card__icon">⚙️</div>
-                        <h3 class="highlight-card__title">Arquitectura Escalable</h3>
-                        <p class="highlight-card__text">Sistemas robustos, modernos y eficientes.</p>
-                    </div>
+        <!-- Panel unificado -->
+        <div class="about__panel">
 
-                    <div class="highlight-card">
-                        <div class="highlight-card__icon">🚀</div>
-                        <h3 class="highlight-card__title">Eficiencia</h3>
-                        <p class="highlight-card__text">Optimización desde la base estructural.</p>
-                    </div>
+            <!-- Item 1 -->
+            <div class="about__item">
+                <div class="about__icon">⚡</div>
+                <div class="about__content">
+                    <h3 class="about__title">Eficiencia</h3>
+                    <p>Optimizando tiempo, recursos y estructura.</p>
                 </div>
             </div>
+
+            <!-- Item 2 -->
+            <div class="about__item">
+                <div class="about__icon">🧠</div>
+                <div class="about__content">
+                    <h3 class="about__title">Arquitectura</h3>
+                    <p>Backends escalables y mantenibles.</p>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="about__item">
+                <div class="about__icon">✨</div>
+                <div class="about__content">
+                    <h3 class="about__title">Experiencia</h3>
+                    <p>Interfaces claras, fluidas y modernas.</p>
+                </div>
+            </div>
+
         </div>
-    </section>
+
+    </div>
+</section>
+
 
 <!-- HABILIDADES -->
 <section id="habilidades" class="skills">
@@ -243,4 +262,23 @@
 
     <script src="scripts/main.js"></script>
 </body>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const panel = document.querySelector(".about__panel");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    panel.classList.add("visible");
+                }
+            });
+        },
+        { threshold: 0.3 }
+    );
+
+    observer.observe(panel);
+});
+</script>
+
 </html>
