@@ -49,6 +49,7 @@ html {
     scroll-behavior: smooth;
 }
 
+/* 🔥 MODIFICACIÓN 1: Fondo base con scroll fijo */
 body {
     font-family: var(--font-primary);
     background: linear-gradient(180deg,
@@ -59,6 +60,7 @@ body {
     );
     color: var(--color-text);
     line-height: 1.6;
+    background-attachment: fixed; /* ¡LA CLAVE! Mantiene el fondo estático. */
 }
 
 /* ========================================
@@ -140,6 +142,7 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
+
 }
 
 .hero__container {
@@ -172,12 +175,6 @@ body {
         0 0 24px #8A2BE2;
     line-height: 1.1;
 }
-
-/* O en el HTML podrías hacer: */
-<h1 class="hero__title">
-    RyuZeNK.Ai<br>
-    Nicolás Peña
-</h1>
 
 .hero__subtitle {
     font-size: 1.2rem;
@@ -233,8 +230,9 @@ body {
 .hero__avatar {
     width: 260px;
     height: 260px;
-    border-radius: 50%;          /* 🔥 La foto será circular */
-    overflow: hidden;            /* 🔥 Recorta todo lo que sobresalga */
+    border-radius: 50%;         /* 🔥 La foto será circular */
+    background: radial-gradient(circle at 40% 40%, #c67eff, #8A2BE2); /* RESTAURADO: Fondo para que destaque*/
+    overflow: hidden;           /* 🔥 Recorta todo lo que sobresalga */
     margin: auto;
 
     /* Glow violeta igual que antes */
@@ -252,14 +250,10 @@ body {
 /* ========================================
    ACERCA DE — Panel Unificado Neon
    ======================================== */
+/* 🔥 MODIFICACIÓN 2: Quitamos el fondo para que se vea el body */
 .about {
-    background: linear-gradient(
-        180deg,
-        #0b0a11 0%,
-        #13101e 35%,
-        #13101e 65%,
-        #0b0a11 100%
-    );
+    /* background: linear-gradient(...) ORIGINAL */
+    background: transparent; 
     padding: 6rem 0;
 }
 
@@ -342,8 +336,10 @@ body {
 /* ========================================
    HABILIDADES - NEON 5 COLUMNAS
    ======================================== */
+/* 🔥 MODIFICACIÓN 3: Quitamos el fondo para que se vea el body */
 .skills {
-    background: linear-gradient(180deg, #0d0b14, #13101e);
+    /* background: linear-gradient(180deg, #0d0b14, #13101e); ORIGINAL */
+    background: transparent;
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
@@ -441,9 +437,11 @@ body {
 /* ========================================
    PROYECTOS
    ======================================== */
+/* 🔥 MODIFICACIÓN 4: Quitamos el fondo para que se vea el body */
 .projects {
     padding: var(--spacing-xxl) var(--spacing-md);
-    background-color: var(--color-bg-alt);
+    /* background-color: var(--color-bg-alt); ORIGINAL */
+    background-color: transparent; 
 }
 
 .projects__container {
@@ -619,8 +617,10 @@ body {
 /* ========================================
    FOOTER
    ======================================== */
+/* 🔥 MODIFICACIÓN 5: Quitamos el fondo para que se vea el body */
 .footer {
-    background-color: var(--color-bg-alt);
+    /* background-color: var(--color-bg-alt); ORIGINAL */
+    background-color: transparent;
     padding: var(--spacing-lg) var(--spacing-md);
     margin-top: var(--spacing-xl);
 }
