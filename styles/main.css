@@ -707,3 +707,56 @@ body {
         font-size: 2rem;
     }
 }
+
+/* ========================================
+   REDES SOCIALES EN CONTACTO
+   ======================================== */
+.contact__social {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.contact__social-text {
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.contact__social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.contact__social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(138, 43, 226, 0.1);
+    border: 1px solid rgba(138, 43, 226, 0.4);
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact__social-link:hover {
+    background: rgba(138, 43, 226, 0.2);
+    border-color: #8A2BE2;
+    box-shadow: 0 0 12px rgba(138, 43, 226, 0.6);
+    transform: translateY(-2px);
+}
+
+.contact__social-icon {
+    font-size: 1.2rem;
+}
+
+/* RESPONSIVE PARA REDES SOCIALES */
+@media (max-width: 480px) {
+    .contact__social-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
