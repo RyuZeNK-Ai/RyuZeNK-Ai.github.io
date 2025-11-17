@@ -1,7 +1,7 @@
+
 /* ========================================
    ESTILOS GLOBALES Y VARIABLES
    ======================================== */
-
 :root {
     /* Colores - Modo Claro */
     --color-bg: #fafafa;
@@ -235,123 +235,119 @@ body {
 }
 
 /* ========================================
-   ACERCA
+   ACERCA DE — Panel Unificado Neon v8
    ======================================== */
-.about {
-    padding: var(--spacing-xxl) var(--spacing-md);
-    background-color: var(--color-bg-alt);
-}
 
-.section__title {
-    font-size: 2.4rem;
-    color: #fff;
-    margin-bottom: var(--spacing-xl);
-    text-shadow:
-        0 0 6px #8A2BE2,
-        0 0 12px #8A2BE2;
+.about {
+    background: linear-gradient(
+        180deg,
+        #0b0a11 0%,
+        #13101e 35%,
+        #13101e 65%,
+        #0b0a11 100%
+    );
+    padding: 6rem 0;
 }
 
 .about__container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
-}
-
-.about__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xl);
+    gap: 3rem;
+    align-items: center;
 }
 
+/* Texto */
 .about__text p {
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-md);
+    font-size: 1.2rem;
+    line-height: 1.75;
+    color: #e6e6e6;
 }
 
-.about__highlights {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-}
-
-.highlight-card {
-    background-color: #0f0c16;
-    padding: var(--spacing-md);
-    border-radius: var(--radius-md);
+/* PANEL UNIFICADO */
+.about__panel {
+    background: rgba(15, 12, 22, 0.85);
     border: 1px solid rgba(138, 43, 226, 0.35);
-    transition: all var(--transition-normal);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+
+    box-shadow:
+        0 0 22px rgba(138, 43, 226, 0.25),
+        inset 0 0 14px rgba(138, 43, 226, 0.18);
+
+    backdrop-filter: blur(4px);
 }
 
-.highlight-card:hover {
-    border-color: #8A2BE2;
-    box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
-    transform: translateY(-4px);
+/* Glow superior */
+.about__panel::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8A2BE2, transparent);
+    opacity: 0.7;
 }
 
-.highlight-card__icon {
-    font-size: 1.5rem;
-    margin-bottom: var(--spacing-xs);
+/* ITEM INTERNO */
+.about__item {
+    display: flex;
+    gap: 1.2rem;
+    padding: 1.2rem;
+    border-radius: 14px;
+    transition: 0.25s ease;
 }
 
-.highlight-card__title {
+.about__item:hover {
+    background: rgba(138, 43, 226, 0.08);
+    transform: translateX(6px);
+}
+
+/* ICONO */
+.about__icon {
+    font-size: 1.8rem;
+}
+
+/* TÍTULOS */
+.about__title {
     color: #fff;
-    margin-bottom: var(--spacing-xs);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
 }
 
-.highlight-card__text {
-    color: var(--color-text-secondary);
-    font-size: 0.9rem;
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .about__container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+/* ===============================
+   ANIMACIÓN - Fade-in Neon
+   =============================== */
+
+.about__panel {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 
+        opacity 0.8s ease-out,
+        transform 0.8s ease-out,
+        box-shadow 1.2s ease-out;
 }
 
-/* ALTERNATIVA - 3 COLUMNAS */
-.skills-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* 3 columnas */
-    gap: 0.8rem;
+.about__panel.visible {
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow:
+        0 0 28px rgba(138, 43, 226, 0.35),
+        inset 0 0 20px rgba(138, 43, 226, 0.22);
 }
 
-.skills-category {
-    padding: 0.8rem;
-}
 
-.skills__grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 botones por fila */
-    gap: 0.3rem;
-}
-
-.skill-card {
-    min-height: 35px;
-    padding: 0.4rem 0.2rem;
-}
-
-.skill-card__name {
-    font-size: 0.8rem;
-}
-
-/* ALTERNATIVA - 3 COLUMNAS */
-.skills-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* 3 columnas */
-    gap: 0.8rem;
-}
-
-.skills-category {
-    padding: 0.8rem;
-}
-
-.skills__grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 botones por fila */
-    gap: 0.3rem;
-}
-
-.skill-card {
-    min-height: 35px;
-    padding: 0.4rem 0.2rem;
-}
-
-.skill-card__name {
-    font-size: 0.8rem;
-}
 
 /* ========================================
    HABILIDADES - RyuZeNK.Ai NEON v6 (5 columnas)
