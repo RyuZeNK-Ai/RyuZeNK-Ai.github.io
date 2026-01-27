@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOULINK - Plataforma en Producción | RyuZeNK.Ai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/fullstack.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="../index.html" class="logo">RyuZeNK.<span>Ai</span></a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/fullstack.html" class="active">Desarrollo Fullstack</a></li>
+                <li><a href="../pages/ia-generativa.html">IA Generativa</a></li>
+                <li><a href="../pages/contact.html">Contáctame</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sección de Detalles del Proyecto -->
+    <section class="section project-detail-section">
+        <div class="container">
+            <!-- Enlace para volver -->
+            <div class="back-button">
+                <a href="../index.html#developer" class="btn-small">
+                    <i class="fas fa-arrow-left"></i> Volver a Proyectos
+                </a>
+            </div>
+            
+            <!-- Proyecto Soulink Detallado -->
+            <article id="soulink" class="project-detail">
+                <!-- Cabecera del proyecto -->
+                <div class="project-header">
+                    <div class="project-badge">
+                        <span class="badge">Proyecto en Producción</span>
+                        <span class="badge">Fullstack Completo</span>
+                        <span class="live-badge">¡EN VIVO!</span>
+                    </div>
+                    <h1 class="project-title">SOULINK - Plataforma Completa en Producción</h1>
+                    <p class="project-subtitle">Aplicación Fullstack con autenticación, tienda e-commerce, carrito de compras y base de datos PostgreSQL</p>
+                </div>
+                
+                <!-- Imagen principal del proyecto -->
+                <div class="project-hero-image">
+                    <img src="../assets/images/soulinkproyect.png" alt="Plataforma Soulink en producción">
+                    <div class="project-tech-banner">
+                        <span>Spring Boot</span>
+                        <span>Java</span>
+                        <span>PostgreSQL</span>
+                        <span>JavaScript</span>
+                        <span>HTML5/CSS3</span>    
+                        <span>Render + Vercel + Neon</span>
+                    </div>
+                </div>
+                
+                <!-- Información básica -->
+                <div class="project-meta-info">
+                    <div class="meta-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div>
+                            <span class="meta-label">Fecha</span>
+                            <span class="meta-value">Noviembre 2024 - Presente</span>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <span class="meta-label">Estado</span>
+                            <span class="meta-value status-active">EN PRODUCCIÓN</span>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-code-branch"></i>
+                        <div>
+                            <span class="meta-label">Arquitectura</span>
+                            <span class="meta-value">Fullstack Moderna</span>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <span class="meta-label">Rol</span>
+                            <span class="meta-value">Desarrollador Fullstack</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Enlaces del proyecto REALES -->
+                <div class="project-links-main">
+                    <a href="https://proyecto-soulink.vercel.app" target="_blank" class="btn btn-demo">
+                        <i class="fas fa-external-link-alt"></i> Ver App en Vivo (Vercel)
+                    </a>
+                    <a href="https://github.com/RyuZeNK-Ai/proyecto-soulink" target="_blank" class="btn btn-code">
+                        <i class="fab fa-github"></i> Ver Código en GitHub
+                    </a>
+                </div>
+                
+                <!-- Descripción detallada -->
+                <div class="project-content">
+                    <section class="content-section">
+                        <h2><i class="fas fa-info-circle"></i> ¿Qué es SOULINK?</h2>
+                        <div class="description-content">
+                            <p><strong>SOULINK es una aplicación web fullstack COMPLETA y FUNCIONAL</strong> que desarrollé desde cero. No es solo un concepto o diseño, es un <strong>sistema real en producción</strong> con las siguientes características implementadas:</p>
+                            
+                <!-- Screenshots con Lightbox - ACTUALIZADO -->
+                <div class="screenshot-grid">
+                    <!-- Imagen 1: Autenticación -->
+                    <div class="screenshot-card" onclick="openLightbox(0)">
+                        <div class="image-container">
+                            <img src="../assets/images/login-screenshot.png" 
+                                alt="Sistema de login y registro de SOULINK"
+                                class="screenshot-img">
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Ver más grande</span>
+                            </div>
+                        </div>
+                        <div class="screenshot-info">
+                            <h4>Autenticación Completa</h4>
+                            <p>Login y registro funcionales con Spring Security</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Imagen 2: Tienda -->
+                    <div class="screenshot-card" onclick="openLightbox(1)">
+                        <div class="image-container">
+                            <img src="../assets/images/tienda-screenshot.png" 
+                                alt="Tienda e-commerce de SOULINK"
+                                class="screenshot-img">
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Ver más grande</span>
+                            </div>
+                        </div>
+                        <div class="screenshot-info">
+                            <h4>Tienda E-commerce</h4>
+                            <p>Catálogo de productos con carrito funcional</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Imagen 3: Checkout -->
+                    <div class="screenshot-card" onclick="openLightbox(2)">
+                        <div class="image-container">
+                            <img src="../assets/images/carrito-screenshot.png" 
+                                alt="Carrito de compras y checkout de SOULINK"
+                                class="screenshot-img">
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Ver más grande</span>
+                            </div>
+                        </div>
+                        <div class="screenshot-info">
+                            <h4>Checkout y Pagos</h4>
+                            <p>Sistema completo de compras con gestión de stock</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lightbox SIMPLE (añade esto justo antes del </section>) -->
+                <div id="simpleLightbox" class="simple-lightbox">
+                    <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
+                    <div class="lightbox-modal">
+                        <button class="lightbox-close-btn" onclick="closeLightbox()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <div class="lightbox-image-wrapper">
+                            <img id="lightboxImage" src="" alt="">
+                        </div>
+                        <div class="lightbox-controls">
+                            <button class="lightbox-prev" onclick="changeImage(-1)">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <span id="imageCounter">1 / 3</span>
+                            <button class="lightbox-next" onclick="changeImage(1)">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                    
+                    <!-- Funcionalidades IMPLEMENTADAS -->
+                    <section class="content-section featured-implemented">
+                        <h2><i class="fas fa-check-circle"></i> Funcionalidades IMPLEMENTADAS</h2>
+                        <div class="features-grid">
+                            <div class="feature-card feature-implemented">
+                                <i class="fas fa-user-check"></i>
+                                <h3>Sistema de Autenticación</h3>
+                                <p><span class="checkmark">✓</span> Login/Registro completo<br>
+                                   <span class="checkmark">✓</span> Spring Security implementado<br>
+                                   <span class="checkmark">✓</span> Sesiones y protección de rutas</p>
+                            </div>
+                            <div class="feature-card feature-implemented">
+                                <i class="fas fa-shopping-cart"></i>
+                                <h3>Tienda E-commerce</h3>
+                                <p><span class="checkmark">✓</span> Catálogo de productos<br>
+                                   <span class="checkmark">✓</span> Carrito de compras funcional<br>
+                                   <span class="checkmark">✓</span> Gestión de inventario en tiempo real</p>
+                            </div>
+                            <div class="feature-card feature-implemented">
+                                <i class="fas fa-credit-card"></i>
+                                <h3>Sistema de Pagos</h3>
+                                <p><span class="checkmark">✓</span> Checkout completo<br>
+                                   <span class="checkmark">✓</span> Formulario de pago con validación<br>
+                                   <span class="checkmark">✓</span> Spinner de carga durante transacciones</p>
+                            </div>
+                            <div class="feature-card feature-implemented">
+                                <i class="fas fa-database"></i>
+                                <h3>Base de Datos PostgreSQL</h3>
+                                <p><span class="checkmark">✓</span> PostgreSQL en Neon.tech<br>
+                                   <span class="checkmark">✓</span> Actualización de stock automática<br>
+                                   <span class="checkmark">✓</span> Relaciones complejas implementadas</p>
+                            </div>
+                            <div class="feature-card feature-implemented">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h3>Diseño Responsive</h3>
+                                <p><span class="checkmark">✓</span> Totalmente funcional en móviles<br>
+                                   <span class="checkmark">✓</span> Grid y Flexbox optimizados<br>
+                                   <span class="checkmark">✓</span> Bootstrap para componentes</p>
+                            </div>
+                            <div class="feature-card feature-implemented">
+                                <i class="fas fa-rocket"></i>
+                                <h3>Deployment en Producción</h3>
+                                <p><span class="checkmark">✓</span> Backend en Render<br>
+                                   <span class="checkmark">✓</span> Frontend en Vercel<br>
+                                   <span class="checkmark">✓</span> Base de datos en Neon.tech</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Stack tecnológico REAL -->
+                    <section class="content-section">
+                        <h2><i class="fas fa-sitemap"></i> Stack Tecnológico Utilizado</h2>
+                        
+                        <div class="tech-stack-real">
+                            <div class="tech-category">
+                                <h3><i class="fas fa-server"></i> Backend (Java - Spring Boot)</h3>
+                                <ul>
+                                    <li><strong>Spring Boot 3</strong> - Framework principal</li>
+                                    <li><strong>Java 17</strong> - Lenguaje de backend</li>
+                                    <li><strong>Spring Security</strong> - Autenticación y autorización</li>
+                                    <li><strong>Maven</strong> - Gestión de dependencias</li>
+                                    <li><strong>Bruno</strong> - Cliente API para testing</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-category">
+                                <h3><i class="fas fa-paint-brush"></i> Frontend</h3>
+                                <ul>
+                                    <li><strong>HTML5/CSS3</strong> - Estructura y estilos</li>
+                                    <li><strong>JavaScript ES6+</strong> - Lógica del cliente</li>
+                                    <li><strong>Bootstrap 5</strong> - Framework CSS</li>
+                                    <li><strong>Grid & Flexbox</strong> - Layouts modernos</li>
+                                    <li><strong>Font Awesome</strong> - Iconografía</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-category">
+                                <h3><i class="fas fa-database"></i> Base de Datos & Deployment</h3>
+                                <ul>
+                                    <li><strong>PostgreSQL</strong> - Base de datos relacional</li>
+                                    <li><strong>Neon.tech</strong> - Hosting de base de datos</li>
+                                    <li><strong>Render</strong> - Hosting del backend</li>
+                                    <li><strong>Vercel</strong> - Hosting del frontend</li>
+                                    <li><strong>GitHub</strong> - Control de versiones</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Deployment REAL -->
+                    <section class="content-section">
+                        <h2><i class="fas fa-cloud-upload-alt"></i> Deployment en Producción</h2>
+                        <div class="deployment-info">
+                            <div class="deployment-card deployment-backend">
+                                <h4><i class="fas fa-server"></i> Backend (Render)</h4>
+                                <p>API RESTful Spring Boot desplegada en Render con:</p>
+                                <ul>
+                                    <li>Autoscaling configurado</li>
+                                    <li>SSL automático</li>
+                                    <li>Monitorización 24/7</li>
+                                </ul>
+                                <div class="deployment-url">
+                                    backend-soulink.onrender.com
+                                </div>
+                            </div>
+                            
+                            <div class="deployment-card deployment-frontend">
+                                <h4><i class="fas fa-desktop"></i> Frontend (Vercel)</h4>
+                                <p>Aplicación web desplegada en Vercel con:</p>
+                                <ul>
+                                    <li>Deployment automático con Git</li>
+                                    <li>CDN global</li>
+                                    <li>SSL gratuito</li>
+                                </ul>
+                                <div class="deployment-url">
+                                    proyecto-soulink.vercel.app
+                                </div>
+                            </div>
+                            
+                            <div class="deployment-card deployment-database">
+                                <h4><i class="fas fa-database"></i> Base de Datos (Neon)</h4>
+                                <p>PostgreSQL serverless en Neon.tech:</p>
+                                <ul>
+                                    <li>Escalado automático</li>
+                                    <li>Backups automáticos</li>
+                                    <li>Conexión segura SSL</li>
+                                </ul>
+                                <div class="deployment-url">
+                                    Base de datos serverless
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Flujo de trabajo REAL -->
+                    <section class="content-section">
+                        <h2><i class="fas fa-code-branch"></i> Flujo de Trabajo y Metodología</h2>
+                        <div class="challenges-grid">
+                            <div class="challenge-card">
+                                <h3><span class="challenge-icon">🔧</span> Desarrollo Fullstack</h3>
+                                <p><strong>Backend:</strong> Spring Boot con arquitectura MVC, REST API, Spring Security para autenticación.</p>
+                                <p><strong>Frontend:</strong> HTML/CSS/JavaScript vanilla con Bootstrap, diseño responsive mobile-first.</p>
+                            </div>
+                            <div class="challenge-card">
+                                <h3><span class="challenge-icon">📊</span> Base de Datos</h3>
+                                <p><strong>PostgreSQL:</strong> Diseño de esquema normalizado, relaciones complejas, triggers para gestión de stock.</p>
+                                <p><strong>Neon.tech:</strong> Base de datos serverless con branching para desarrollo/producción.</p>
+                            </div>
+                            <div class="challenge-card">
+                                <h3><span class="challenge-icon">⚡</span> Deployment</h3>
+                                <p><strong>CI/CD:</strong> Integración continua con GitHub, deployment automático en Render y Vercel.</p>
+                                <p><strong>Monitorización:</strong> Logs en tiempo real, alertas de error, uptime garantizado.</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Características futuras -->
+                    <section class="content-section">
+                        <h2><i class="fas fa-road"></i> Próximas Características</h2>
+                        <div class="roadmap">
+                            <div class="roadmap-phase current">
+                                <div class="phase-header">
+                                    <span class="phase-badge">Implementado</span>
+                                    <h3>MVP Completo</h3>
+                                </div>
+                                <ul>
+                                    <li>✅ Autenticación con Spring Security</li>
+                                    <li>✅ Tienda e-commerce funcional</li>
+                                    <li>✅ Carrito y sistema de pagos</li>
+                                    <li>✅ Base de datos PostgreSQL</li>
+                                    <li>✅ Deployment en producción</li>
+                                </ul>
+                            </div>
+                            <div class="roadmap-phase next">
+                                <div class="phase-header">
+                                    <span class="phase-badge">En Desarrollo</span>
+                                    <h3>Mejoras y Escalabilidad</h3>
+                                </div>
+                                <ul>
+                                    <li>Panel de administración</li>
+                                    <li>Sistema de roles y permisos</li>
+                                    <li>API documentation (Swagger)</li>
+                                    <li>Tests unitarios y de integración</li>
+                                </ul>
+                            </div>
+                            <div class="roadmap-phase future">
+                                <div class="phase-header">
+                                    <span class="phase-badge">Planeado</span>
+                                    <h3>Funcionalidades Avanzadas</h3>
+                                </div>
+                                <ul>
+                                    <li>Pasarela de pagos real (Stripe)</li>
+                                    <li>Notificaciones en tiempo real</li>
+                                    <li>App móvil nativa (React Native)</li>
+                                    <li>Analíticas y dashboard</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Aprendizajes y desafíos -->
+                    <section class="content-section">
+                        <h2><i class="fas fa-graduation-cap"></i> Aprendizajes y Desafíos Superados</h2>
+                        <div class="impact-stats">
+                            <div class="stat-card">
+                                <i class="fas fa-code"></i>
+                                <span class="stat-number">5,000+</span>
+                                <span class="stat-label">Líneas de código</span>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-database"></i>
+                                <span class="stat-number">15+</span>
+                                <span class="stat-label">Tablas en BD</span>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-bolt"></i>
+                                <span class="stat-number">99.9%</span>
+                                <span class="stat-label">Uptime</span>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-clock"></i>
+                                <span class="stat-number">4+</span>
+                                <span class="stat-label">Meses de desarrollo</span>
+                            </div>
+                        </div>
+                        <div class="impact-description">
+                            <p><strong>Desafíos técnicos superados:</strong></p>
+                            <ul class="impact-list">
+                                <li>Integración completa frontend-backend con API REST</li>
+                                <li>Implementación de Spring Security para autenticación segura</li>
+                                <li>Gestión de transacciones en base de datos PostgreSQL</li>
+                                <li>Deployment en múltiples plataformas (Render + Vercel)</li>
+                                <li>Optimización de rendimiento y carga de recursos</li>
+                                <li>Diseño responsive que funciona en todos los dispositivos</li>
+                            </ul>
+                        </div>
+                    </section>
+                    
+                    <!-- Call to Action REAL -->
+                    <div class="project-cta">
+                        <h3><i class="fas fa-rocket"></i> ¿Quieres probar la aplicación?</h3>
+                        <p>SOULINK está <strong>COMPLETAMENTE FUNCIONAL Y EN PRODUCCIÓN</strong>. Puedes registrarte, explorar la tienda, añadir productos al carrito y simular compras. Todo funciona con una base de datos real.</p>
+                        <div class="cta-buttons">
+                            <a href="https://proyecto-soulink.vercel.app" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-play-circle"></i> Probar Aplicación en Vivo
+                            </a>
+                            <a href="https://github.com/RyuZeNK-Ai/proyecto-soulink" target="_blank" class="btn btn-secondary">
+                                <i class="fab fa-github"></i> Explorar Código Fuente
+                            </a>
+                        </div>
+                        <p style="margin-top: 20px; font-size: 0.9rem; color: #aaa;">
+                            <i class="fas fa-info-circle"></i> Esta es una aplicación REAL de demostración. Los datos se almacenan en una base de datos PostgreSQL en Neon.tech.
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html" class="logo">RyuZeNK.<span>Ai</span></a>
+                    <p>Desarrollo + Creatividad + Innovación</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../pages/fullstack.html">Desarrollo Fullstack</a></li>
+                        <li><a href="../pages/ia-generativa.html">IA Generativa</a></li>
+                        <li><a href="../pages/contact.html">Contáctame</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Conecta conmigo</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/RyuZeNK-Ai" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nicolas-pena-fullstack/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ryuzenk.ai/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 RyuZeNK.Ai - Nicolás Peña. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón para subir arriba -->
+    <button id="scrollTopBtn" class="scroll-top-btn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <script>
+// ============================================
+// LIGHTBOX SIMPLE PARA SCREENSHOTS
+// ============================================
+
+// Array de imágenes
+const soulinkImages = [
+    '../assets/images/login-screenshot.png',
+    '../assets/images/tienda-screenshot.png',
+    '../assets/images/carrito-screenshot.png'
+];
+
+let currentIndex = 0;
+
+// Función para abrir lightbox
+function openLightbox(index) {
+    console.log('Abriendo lightbox con índice:', index);
+    currentIndex = index;
+    updateLightbox();
+    document.getElementById('simpleLightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Función para cerrar lightbox
+function closeLightbox() {
+    console.log('Cerrando lightbox');
+    document.getElementById('simpleLightbox').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Cambiar imagen
+function changeImage(direction) {
+    currentIndex += direction;
+    
+    // Circular navigation
+    if (currentIndex < 0) {
+        currentIndex = soulinkImages.length - 1;
+    } else if (currentIndex >= soulinkImages.length) {
+        currentIndex = 0;
+    }
+    
+    updateLightbox();
+}
+
+// Actualizar contenido del lightbox
+function updateLightbox() {
+    const lightboxImage = document.getElementById('lightboxImage');
+    const imageCounter = document.getElementById('imageCounter');
+    
+    // Actualizar imagen
+    lightboxImage.src = soulinkImages[currentIndex];
+    lightboxImage.alt = `Screenshot SOULINK ${currentIndex + 1}`;
+    
+    // Actualizar contador
+    imageCounter.textContent = `${currentIndex + 1} / ${soulinkImages.length}`;
+}
+
+    // Navegación con teclado
+    document.addEventListener('keydown', function(event) {
+        const lightbox = document.getElementById('simpleLightbox');
+        
+        if (!lightbox.classList.contains('active')) return;
+        
+        switch(event.key) {
+            case 'Escape':
+                closeLightbox();
+                break;
+            case 'ArrowLeft':
+                changeImage(-1);
+                break;
+            case 'ArrowRight':
+                changeImage(1);
+                break;
+        }
+    });
+
+    // Cerrar al hacer clic fuera de la imagen
+    document.addEventListener('click', function(event) {
+        const lightbox = document.getElementById('simpleLightbox');
+        const modal = document.querySelector('.lightbox-modal');
+        
+        if (lightbox.classList.contains('active') && 
+            event.target.classList.contains('lightbox-backdrop')) {
+            closeLightbox();
+        }
+    });
+
+    // Debug: Verificar que todo está cargado
+    console.log('Lightbox script cargado');
+    console.log('Imágenes disponibles:', soulinkImages);
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,270 +1,337 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RyuZeNK.Ai - Portafolio</title>
-
-    <!-- Tipografías -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap"
-        rel="stylesheet"
-    />
-
-    <!-- AQUÍ EL FIX REAL -->
-    <link rel="stylesheet" href="styles/main.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RyuZeNK.Ai | Portafolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
-<body class="theme-dark">
-    <!-- HEADER -->
-    <header class="header">
-        <div class="header__container">
-
-            <div class="header__logo">
-                <span class="header__logo-text">RyuZeNK.Ai</span>
-            </div>
-
-            <nav class="header__nav">
-                <a href="#inicio" class="header__nav-link">Inicio</a>
-                <a href="#acerca" class="header__nav-link">Acerca</a>
-                <a href="#habilidades" class="header__nav-link">Habilidades</a>
-                <a href="#proyectos" class="header__nav-link">Proyectos</a>
-                <a href="#contacto" class="header__nav-link">Contacto</a>
-            </nav>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#home" class="logo">RyuZeNK.<span>Ai</span></a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pages/fullstack.html">Desarrollo Fullstack</a></li>
+                <li><a href="pages/ia-generativa.html">IA Generativa</a></li>
+                <li><a href="pages/contact.html">Contáctame</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <!-- HERO -->
-    <section id="inicio" class="hero">
-        <div class="hero__container">
-
-            <div class="hero__content">
-                <h1 class="hero__title">RyuZeNK.Ai · Nicolás Peña</h1>
-
-                <p class="hero__subtitle">
-                    Desarrollador Full Stack enfocado en código limpio, interfaces intuitivas y arquitecturas backend escalables.
-                </p>
-
-                <div class="hero__buttons">
-                    <a href="#proyectos" class="btn btn--primary">Ver Proyectos</a>
-                    <a href="#" class="btn btn--secondary">Descargar CV</a>
-                </div>
-            </div>
-
-            <div class="hero__avatar">
-    <img src="img/tu-foto.png" alt="Foto de RyuZeNK.Ai">
-         </div>
-
-        </div>
-    </section>
-
-   <!-- ===================== ACERCA DE ===================== -->
-<section id="acerca" class="about">
-    <h2 class="section__title">Acerca de</h2>
-
-    <div class="about__container">
-
-        <!-- Texto principal -->
-        <div class="about__text">
-            <p>
-                Soy un desarrollador Full Stack apasionado por crear experiencias digitales
-                que mezclan diseño intuitivo, código limpio y una arquitectura sólida.
-                Me enfoco en construir sistemas escalables y estéticamente equilibrados,
-                fusionando creatividad con ingeniería.
-            </p>
-        </div>
-
-        <!-- Panel unificado -->
-        <div class="about__panel">
-
-            <!-- Item 1 -->
-            <div class="about__item">
-                <div class="about__icon">⚡</div>
-                <div class="about__content">
-                    <h3 class="about__title">Eficiencia</h3>
-                    <p>Optimizando tiempo, recursos y estructura.</p>
-                </div>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="about__item">
-                <div class="about__icon">🧠</div>
-                <div class="about__content">
-                    <h3 class="about__title">Arquitectura</h3>
-                    <p>Backends escalables y mantenibles.</p>
-                </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="about__item">
-                <div class="about__icon">✨</div>
-                <div class="about__content">
-                    <h3 class="about__title">Experiencia</h3>
-                    <p>Interfaces claras, fluidas y modernas.</p>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-
-<!-- HABILIDADES -->
-<section id="habilidades" class="skills">
-    <div class="skills__container">
-        <h2 class="section__title">Habilidades & Tecnologías</h2>
-
-        <div class="skills__categories-grid">
-
-            <!-- 1 - Frontend -->
-            <div class="skills-category">
-                <h3 class="skills-category__title">Frontend</h3>
-                <div class="skills__grid">
-                    <div class="skill-card"><span class="skill-card__name">HTML</span></div>
-                    <div class="skill-card"><span class="skill-card__name">CSS</span></div>
-                    <div class="skill-card"><span class="skill-card__name">JavaScript</span></div>
-                    <div class="skill-card"><span class="skill-card__name">React</span></div>
-                    <div class="skill-card"><span class="skill-card__name">MaterialUI</span></div>
-                </div>
-            </div>
-
-            <!-- 2 - Backend -->
-            <div class="skills-category">
-                <h3 class="skills-category__title">Backend</h3>
-                <div class="skills__grid">
-                    <div class="skill-card"><span class="skill-card__name">Java</span></div>
-                    <div class="skill-card"><span class="skill-card__name">Python</span></div>
-                    <div class="skill-card"><span class="skill-card__name">Node.js</span></div>
-                    <div class="skill-card"><span class="skill-card__name">Spring Boot</span></div>
-                </div>
-            </div>
-
-            <!-- 3 - Cloud -->
-            <div class="skills-category">
-                <h3 class="skills-category__title">Cloud & Herramientas</h3>
-                <div class="skills__grid">
-                    <div class="skill-card"><span class="skill-card__name">GCP</span></div>
-                    <div class="skill-card"><span class="skill-card__name">Git</span></div>
-                    <div class="skill-card"><span class="skill-card__name">GitHub</span></div>
-                    <div class="skill-card"><span class="skill-card__name">Bash</span></div>
-                </div>
-            </div>
-
-            <!-- 4 - Bases -->
-            <div class="skills-category">
-                <h3 class="skills-category__title">Bases de Datos & APIs</h3>
-                <div class="skills__grid">
-                    <div class="skill-card"><span class="skill-card__name">MySQL</span></div>
-                    <div class="skill-card"><span class="skill-card__name">REST API</span></div>
-                </div>
-            </div>
-
-            <!-- 5 - Metodologías -->
-            <div class="skills-category">
-                <h3 class="skills-category__title">Metodologías</h3>
-                <div class="skills__grid">
-                    <div class="skill-card"><span class="skill-card__name">Scrum</span></div>
-                    <div class="skill-card"><span class="skill-card__name">Jira</span></div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-  
-    <!-- PROYECTOS -->
-    <section id="proyectos" class="projects">
-        <div class="projects__container">
-            <h2 class="section__title">Proyectos</h2>
-
-            <div class="projects__grid">
-
-                <div class="project-card">
-                    <div class="project-card__image"></div>
-                    <div class="project-card__content">
-                        <h3 class="project-card__title">Proyecto Uno</h3>
-                        <p class="project-card__description">Aplicación moderna con una interfaz intuitiva y optimizada.</p>
-                        <p class="project-card__tech">HTML • CSS • JS</p>
+    <!-- Hero Section -->
+    <section id="home" class="section hero-section">
+        <div class="container">
+            <div class="home-content">
+                <div class="home-text">
+                    <h1>Fullstack Developer + IA Generativa</h1>
+                    <p class="about-me">
+                        Hola, soy <span class="h1-logo">Nicolás Peña</span>, también conocido como 
+                        <span class="ryuzenk-logo">RyuZeNK</span><span class="ai-logo">.Ai</span>.<br><br>
+                        Fusiono código sólido con IA creativa para diseñar experiencias digitales que inspiran, sorprenden y proyectan hacia el futuro.<br><br>
+                        💡 Combino visión, creatividad y tecnología para materializar lo que otros solo se atreven a imaginar.
+                    </p>
+                    <div class="home-buttons">
+                        <a href="https://drive.google.com/file/d/15BwX9daRsnPTZlRzVrJhSIFkPyCKNTIb/view?usp=sharing" target="_blank" class="btnVer">
+                            <i class="fas fa-eye"></i> Ver CV
+                        </a>
+                        <a href="https://drive.usercontent.google.com/u/0/uc?id=15BwX9daRsnPTZlRzVrJhSIFkPyCKNTIb&export=download" target="_blank" class="btnDownload">
+                            <i class="fas fa-download"></i> Descargar CV
+                        </a>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-card__image"></div>
-                    <div class="project-card__content">
-                        <h3 class="project-card__title">Proyecto Dos</h3>
-                        <p class="project-card__description">Plataforma con APIs avanzadas y dashboard de control.</p>
-                        <p class="project-card__tech">React • Node • MongoDB</p>
-                    </div>
+                
+                <div class="home-image">
+                    <img src="assets/images/Nico_formal_tech.png" alt="Nicolás Peña - Imagen formal" class="formal-img">
                 </div>
-
-                <div class="project-card">
-                    <div class="project-card__image"></div>
-                    <div class="project-card__content">
-                        <h3 class="project-card__title">Proyecto Tres</h3>
-                        <p class="project-card__description">Sistema completo con análisis en tiempo real.</p>
-                        <p class="project-card__tech">Vue • Python • PostgreSQL</p>
-                    </div>
+            </div>
+            
+            <div class="cyberpunk-section">
+                <h3>Explora mi trabajo</h3>
+                <div class="quick-links">
+                    <a href="#developer" class="quick-link">
+                        <i class="fas fa-code"></i>
+                        <span>Proyectos Fullstack</span>
+                    </a>
+                    <a href="#ai" class="quick-link">
+                        <i class="fas fa-robot"></i>
+                        <span>Proyectos con IA</span>
+                    </a>
                 </div>
-
             </div>
         </div>
     </section>
 
-<!-- CONTACTO -->
-<section id="contacto" class="contact">
-    <div class="contact__container">
-        <h2 class="section__title">Contacto</h2>
-
-        <p class="contact__text">
-            ¿Tienes una idea o proyecto? Escríbeme, y trabajemos juntos.
-        </p>
-
-        <form action="https://formspree.io/f/mrbrvvwa" method="POST" class="contact__form">
-            <div class="form__group">
-                <label class="form__label">Nombre</label>
-                <input class="form__input" type="text" name="name" placeholder="Tu nombre" required />
+    <!-- Desarrollador Fullstack Section -->
+    <section id="developer" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Desarrollador Fullstack</h2>
+                <p class="section-subtitle">Proyectos de aplicaciones web completas</p>
             </div>
-
-            <div class="form__group">
-                <label class="form__label">Correo Electrónico</label>
-                <input class="form__input" type="email" name="email" placeholder="tu@email.com" required />
-            </div>
-
-            <div class="form__group">
-                <label class="form__label">Mensaje</label>
-                <textarea class="form__textarea" name="message" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn--primary btn--submit">Enviar Mensaje</button>
-        </form>
-
-        <!-- 🔥 SECCIÓN DE REDES SOCIALES ACTUALIZADA -->
-        <div class="contact__social">
-            <p class="contact__social-text">O contáctame directamente por:</p>
-            <div class="contact__social-links">
-                <a href="https://github.com/RyuZeNK-Ai" class="contact__social-link">
-                    <span class="contact__social-icon">💻</span>
-                    GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/nicolas-peña-fullstack" class="contact__social-link">
-                    <span class="contact__social-icon">💼</span>
-                    LinkedIn
-                </a>
-                <a href="https://www.instagram.com/ryuzenk.ai" class="contact__social-link">
-                    <span class="contact__social-icon">📷</span>
-                    Instagram
-                </a>
+            
+            <!-- Proyectos Fullstack -->
+            <div class="fullstack-projects">
+                <div class="projects-grid">
+                    <!-- Proyecto 1: Soulink -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/soulinkproyect.png" alt="Proyecto Soulink">
+                            <div class="project-tech">
+                                <span>Spring Boot</span>
+                                <span>Java</span>
+                                <span>DBeaver</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>SOULINK - Plataforma de apoyo emocional preventivo</h4>
+                            <p>Plataforma segura de apoyo emocional preventivo en Chile que ofrece intervención temprana, herramientas de autocuidado y una comunidad comprensiva para prevenir crisis emocionales y reducir el estigma alrededor de la salud mental.</p>
+                            <div class="project-links">
+                                <a href="https://proyecto-soulink.vercel.app" target="_blank" class="btn-small">
+                                    <i class="fas fa-external-link-alt"></i> Demo
+                                </a>
+                                <a href="https://github.com/RyuZeNK-Ai/proyecto-soulink" target="_blank" class="btn-small">
+                                    <i class="fab fa-github"></i> Código
+                                </a>
+                                <a href="pages/fullstack.html#soulink" class="btn-small">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Proyecto 2: Bloqueado -->
+                    <div class="project-card blocked">
+                        <div class="project-image">
+                            <div class="blocked-overlay">
+                                <i class="fas fa-lock"></i>
+                                <span>Proximamente</span>
+                            </div>
+                            <img src="assets/projects/backend.jpg" alt="Proyecto Dashboard">
+                            <div class="project-tech">
+                                <span>Vue.js</span>
+                                <span>Express</span>
+                                <span>PostgreSQL</span>
+                                <span>Socket.io</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Sistema de Dashboard Analítico</h4>
+                            <p>Dashboard en tiempo real con gráficos interactivos, autenticación JWT, exportación de reportes y notificaciones push.</p>
+                            <div class="project-links">
+                                <a href="#" class="btn-small disabled">
+                                    <i class="fas fa-external-link-alt"></i> Demo
+                                </a>
+                                <a href="#" class="btn-small disabled">
+                                    <i class="fab fa-github"></i> Código
+                                </a>
+                                <a href="#" class="btn-small disabled">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Proyecto 3: Bloqueado -->
+                    <div class="project-card blocked">
+                        <div class="project-image">
+                            <div class="blocked-overlay">
+                                <i class="fas fa-lock"></i>
+                                <span>Proximamente</span>
+                            </div>
+                            <img src="assets/projects/database.jpg" alt="Proyecto Red Social">
+                            <div class="project-tech">
+                                <span>React Native</span>
+                                <span>Firebase</span>
+                                <span>Cloud Functions</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Aplicación Social Móvil</h4>
+                            <p>App social con chat en tiempo real, subida de multimedia, geolocalización y sistema de match.</p>
+                            <div class="project-links">
+                                <a href="#" class="btn-small disabled">
+                                    <i class="fab fa-google-play"></i> Play Store
+                                </a>
+                                <a href="#" class="btn-small disabled">
+                                    <i class="fab fa-github"></i> Código
+                                </a>
+                                <a href="#" class="btn-small disabled">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="center-button">
+                    <a href="pages/fullstack.html" class="btn">
+                        <i class="fas fa-code"></i> Ver Todos los Proyectos Detallados
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-     <!-- FOOTER SIMPLIFICADO -->
-   <footer>
-    <div align="center">
-        <p>© 2025 RyuZeNK.Ai — Todos los derechos reservados.</p>
-    </div>
-</footer>
+    <!-- Proyectos con IA Section -->
+    <section id="ai" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Proyectos con IA</h2>
+                <p class="section-subtitle">Creando contenido innovador con inteligencia artificial</p>
+            </div>
+            
+            <div class="ai-projects">
+                <div class="projects-grid">
+                    <!-- Proyecto IA 1: DESBLOQUEADO - Arte Abstracto Digital -->
+                    <div class="project-card" onclick="window.location.href='pages/ia-generativa.html?image=abstracto'">
+                        <div class="project-image">
+                            <img src="assets/images/personaje_cyberpunk1.jpg" alt="Arte Abstracto Digital con IA">
+                            <div class="project-tech">
+                                <span>Nano Banana</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Personaje Propio Cyberpunk</h4>
+                            <p>Generado con Nanobanana. Personaje completamente personalizado.</p>
+                            <div class="project-links">
+                                <a href="pages/ia-generativa.html?image=abstracto" class="btn-small" onclick="event.stopPropagation()">
+                                    <i class="fas fa-images"></i> Ver Galería
+                                </a>
+                                <a href="pages/ia-generativa.html?image=abstracto" class="btn-small" onclick="event.stopPropagation()">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Proyecto IA 2: Bloqueado -->
+                    <div class="project-card blocked">
+                        <div class="project-image">
+                            <div class="blocked-overlay">
+                                <i class="fas fa-lock"></i>
+                                <span>Proximamente</span>
+                            </div>
+                            <img src="assets/projects/ia-videos.jpg" alt="Proyecto IA Videos">
+                            <div class="project-tech">
+                                <span>Veo 3</span>
+                                <span>Pika Labs</span>
+                                <span>Stable Video</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Generación de Videos con IA</h4>
+                            <p>Animaciones, contenido explicativo y motion graphics generados automáticamente con IA.</p>
+                            <div class="project-links">
+                                <a href="#" class="btn-small disabled">Ver Demos</a>
+                                <a href="#" class="btn-small disabled">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Proyecto IA 3: Bloqueado -->
+                    <div class="project-card blocked">
+                        <div class="project-image">
+                            <div class="blocked-overlay">
+                                <i class="fas fa-lock"></i>
+                                <span>Proximamente</span>
+                            </div>
+                            <img src="assets/projects/ia-integracion.jpg" alt="Proyecto IA Integración">
+                            <div class="project-tech">
+                                <span>OpenAI API</span>
+                                <span>LangChain</span>
+                                <span>Custom Models</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Integración IA en Aplicaciones</h4>
+                            <p>Proyectos que combinan desarrollo fullstack con modelos de IA para funcionalidades avanzadas.</p>
+                            <div class="project-links">
+                                <a href="#" class="btn-small disabled">Ver Proyectos</a>
+                                <a href="#" class="btn-small disabled">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="center-button">
+                    <a href="pages/ia-generativa.html" class="btn">
+                        <i class="fas fa-robot"></i> Ver Todos los Proyectos de IA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#home" class="logo">RyuZeNK.<span>Ai</span></a>
+                    <p>Desarrollo + Creatividad + Innovación</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pages/fullstack.html">Desarrollo Fullstack</a></li>
+                    <li><a href="pages/ia-generativa.html">IA Generativa</a></li>
+                    <li><a href="pages/contact.html">Contáctame</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Conecta conmigo</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/RyuZeNK-Ai" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nicolas-pena-fullstack/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ryuzenk.ai/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 RyuZeNK.Ai - Nicolás Peña. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón para subir arriba -->
+    <button id="scrollTopBtn" class="scroll-top-btn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Añadir efecto hover a la tarjeta de IA desbloqueada
+        document.addEventListener('DOMContentLoaded', function() {
+            const iaCard = document.querySelector('#ai .project-card:not(.blocked)');
+            if (iaCard) {
+                iaCard.style.cursor = 'pointer';
+                iaCard.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 10px 25px rgba(255, 0, 128, 0.2)';
+                    this.querySelector('.ia-image-overlay').style.display = 'flex';
+                });
+                
+                iaCard.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 0 20px rgba(255, 0, 128, 0.1)';
+                    this.querySelector('.ia-image-overlay').style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA Generativa | RyuZeNK.Ai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/ia-generativa.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="../index.html" class="logo">RyuZeNK.<span>Ai</span></a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/fullstack.html">Desarrollo Fullstack</a></li>
+                <li><a href="../pages/ia-generativa.html" class="active">IA Generativa</a></li>
+                <li><a href="../pages/contact.html">Contáctame</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sección Galería con Pestañas -->
+    <section class="section ia-gallery-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>IA Generativa</h2>
+                <p class="section-subtitle">Explora mis creaciones con inteligencia artificial</p>
+            </div>
+            
+            <!-- Pestañas de navegación -->
+            <div class="tabs-nav">
+                <button class="tab-btn active" data-tab="all">
+                    <i class="fas fa-th"></i>
+                    <span>Todo</span>
+                </button>
+                <button class="tab-btn" data-tab="images">
+                    <i class="fas fa-image"></i>
+                    <span>Imágenes</span>
+                </button>
+                <button class="tab-btn blocked" data-tab="videos">
+                    <i class="fas fa-video"></i>
+                    <span>Videos</span>
+                </button>
+                <button class="tab-btn blocked" data-tab="prompts">
+                    <i class="fas fa-keyboard"></i>
+                    <span>Prompts</span>
+                </button>
+            </div>
+            
+            <!-- Sección Herramientas COMPACTA -->
+            <div class="tools-section">
+                <h3 class="tools-title">
+                    <i class="fas fa-tools"></i> Herramientas que Utilizo
+                </h3>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <i class="fas fa-palette"></i>
+                        <h4>Stable Diffusion</h4>
+                        <p>Arte conceptual y generación de imágenes</p>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <i class="fas fa-magic"></i>
+                        <h4>Leonardo.Ai</h4>
+                        <p>Arte digital de alta calidad</p>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <i class="fas fa-robot"></i>
+                        <h4>Nano Banana</h4>
+                        <p>Prototipado visual rápido</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contenido: Todo (predeterminado) -->
+            <div class="tab-content active" id="tab-all">
+                <h3 class="gallery-title">
+                    <i class="fas fa-images"></i> Galería Completa
+                </h3>
+                
+                <div class="gallery-grid">
+                    <!-- Imagen 1 -->
+                    <div class="gallery-item" onclick="openIALightboxById('cyberpunk')">
+                        <div class="ia-image-container">
+                            <img src="../assets/images/depresion.png" alt="Arte Cyberpunk" class="gallery-image">
+                            <div class="ia-image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Ver más grande</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Demonio Reflejado</h4>
+                            <p>Generado con Nanobanana. Sujeto frente a una ventana.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Imagen 2 -->
+                    <div class="gallery-item" onclick="openIALightboxById('futurista')">
+                        <div class="ia-image-container">
+                            <img src="../assets/images/chica_anime1.jpg" alt="Arte Futurista" class="gallery-image">
+                            <div class="ia-image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Ver más grande</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Chica Anime</h4>
+                            <p>Creación con Stable Diffusion, Chica detallada con entorno calido. </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Imagen 3 -->
+                    <div class="gallery-item" onclick="openIALightboxById('personaje')">
+                        <div class="ia-image-container">
+                            <img src="../assets/images/persona_cyberpunk.jpg" alt="Personaje IA" class="gallery-image">
+                            <div class="ia-image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Ver más grande</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Persona IA Generado</h4>
+                            <p>Generado con Leonardo.Ai. Diseño de persona con estilo cyberpunk.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sección bloqueada para Videos -->
+                <div class="blocked-content">
+                    <i class="fas fa-video"></i>
+                    <h3>Videos con IA - Próximamente</h3>
+                    <p>Sección en desarrollo. Próximamente podrás ver mis creaciones de video generado con IA.</p>
+                </div>
+                
+                <!-- Sección bloqueada para Prompts -->
+                <div class="blocked-content">
+                    <i class="fas fa-keyboard"></i>
+                    <h3>Prompts de IA - Próximamente</h3>
+                    <p>Sección en desarrollo. Próximamente compartiré mis prompts y técnicas para generar contenido con IA.</p>
+                </div>
+            </div>
+            
+            <!-- Contenido: Solo Imágenes -->
+            <div class="tab-content" id="tab-images">
+                <h3 class="gallery-title">
+                    <i class="fas fa-image"></i> Galería de Imágenes
+                </h3>
+                
+                <div class="gallery-grid">
+                    <!-- Imagen 1: Cyberpunk -->
+                    <div class="gallery-item" onclick="openIALightboxById('cyberpunk')">
+                        <div class="ia-image-container">
+                            <img src="../assets/images/depresion.png" alt="Arte Cyberpunk" class="gallery-image">
+                            <div class="ia-image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Ver más grande</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Demonio Reflejado</h4>
+                            <p>Generado con Nanobanana. Sujeto frente a una ventana.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Imagen 2: Futurista -->
+                    <div class="gallery-item" onclick="openIALightboxById('futurista')">
+                        <div class="ia-image-container">
+                            <img src="../assets/images/chica_anime1.jpg" alt="Arte Futurista" class="gallery-image">
+                            <div class="ia-image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Ver más grande</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Chica Anime</h4>
+                            <p>Creación con Stable Diffusion, Chica detallada con entorno calido. </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Imagen 3: Personaje -->
+                    <div class="gallery-item" onclick="openIALightboxById('personaje')">
+                        <div class="ia-image-container">
+                            <img src="../assets/images/persona_cyberpunk.jpg" alt="Personaje IA" class="gallery-image">
+                            <div class="ia-image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Ver más grande</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Persona IA Generado</h4>
+                            <p>Generado con Leonardo.Ai. Diseño de persona con estilo cyberpunk.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Imagen 4: Paisaje -->
+                    <div class="gallery-item" onclick="openIALightboxById('paisaje')">
+                        <div class="ia-image-container">
+                            <img src="../assets/images/paisaje_japones1.jpg" alt="Paisaje Japonés" class="gallery-image">
+                            <div class="ia-image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Ver más grande</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Paisaje Japonés</h4>
+                            <p>Paisaje tradicional japonés con cerezos y montañas, generado con Stable Diffusion.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Imagen 5: Abstracto -->
+                    <div class="gallery-item" onclick="openIALightboxById('abstracto')">
+                        <div class="ia-image-container">
+                            <img src="../assets/images/personaje_cyberpunk1.jpg" alt="Arte Abstracto" class="gallery-image">
+                            <div class="ia-image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Ver más grande</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Personaje Propio Cyberpunk</h4>
+                            <p>Generado con Nanobanana. Personaje completamente personalizado.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Imagen 6: Concept -->
+                    <div class="gallery-item" onclick="openIALightboxById('concept')">
+                        <div class="ia-image-container">
+                            <img src="../assets/images/personajes_animados.jpg" alt="Concept Art" class="gallery-image">
+                            <div class="ia-image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Ver más grande</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Personajes Anime Generador</h4>
+                            <p>Generado con DALL·E. Diseño de personajes animados.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contenido: Videos (bloqueado) -->
+            <div class="tab-content" id="tab-videos">
+                <div class="blocked-content">
+                    <i class="fas fa-video"></i>
+                    <h3>Videos con IA - Próximamente</h3>
+                    <p>Esta sección está actualmente en desarrollo. Próximamente podrás explorar mis creaciones de video generado con inteligencia artificial utilizando herramientas como Veo 3, Pika Labs y Stable Video.</p>
+                    <p class="blocked-note">
+                        <i class="fas fa-clock"></i> Disponible próximamente
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Contenido: Prompts (bloqueado) -->
+            <div class="tab-content" id="tab-prompts">
+                <div class="blocked-content">
+                    <i class="fas fa-keyboard"></i>
+                    <h3>Prompts de IA - Próximamente</h3>
+                    <p>Esta sección está actualmente en desarrollo. Próximamente compartiré mis prompts, técnicas y estrategias para generar contenido de calidad con diferentes modelos de IA.</p>
+                    <p class="blocked-note">
+                        <i class="fas fa-clock"></i> Disponible próximamente
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Lightbox para IA Generativa -->
+            <div id="iaLightbox" class="simple-lightbox">
+                <div class="lightbox-backdrop" onclick="closeIALightbox()"></div>
+                <div class="lightbox-modal">
+                    <button class="lightbox-close-btn" onclick="closeIALightbox()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="lightbox-image-wrapper">
+                        <img id="iaLightboxImage" src="" alt="">
+                    </div>
+                    <div class="lightbox-controls">
+                        <button class="lightbox-prev" onclick="changeIAImage(-1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span id="iaImageCounter">1 / 6</span>
+                        <button class="lightbox-next" onclick="changeIAImage(1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="lightbox-caption">
+                        <h3 id="iaLightboxTitle"></h3>
+                        <p id="iaLightboxDescription"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="center-button">
+                <a href="../index.html#ai" class="btn">
+                    <i class="fas fa-arrow-left"></i> Volver al Portafolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html" class="logo">RyuZeNK.<span>Ai</span></a>
+                    <p>Desarrollo + Creatividad + Innovación</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../pages/fullstack.html">Desarrollo Fullstack</a></li>
+                        <li><a href="../pages/ia-generativa.html">IA Generativa</a></li>
+                        <li><a href="../pages/contact.html">Contáctame</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Conecta conmigo</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/RyuZeNK-Ai" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nicolas-pena-fullstack/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ryuzenk.ai/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 RyuZeNK.Ai - Nicolás Peña. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón para subir arriba -->
+    <button id="scrollTopBtn" class="scroll-top-btn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Sistema de pestañas
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn:not(.blocked)');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remover clase active de todos los botones
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    // Añadir clase active al botón clickeado
+                    this.classList.add('active');
+                    
+                    // Ocultar todos los contenidos
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    // Mostrar el contenido correspondiente
+                    document.getElementById(`tab-${tabId}`).classList.add('active');
+                });
+            });
+            
+            // Desactivar clicks en botones bloqueados
+            document.querySelectorAll('.tab-btn.blocked').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Efecto visual de no disponible
+                    this.style.animation = 'shake 0.5s';
+                    setTimeout(() => {
+                        this.style.animation = '';
+                    }, 500);
+                });
+            });
+        });
+
+        // ============================================
+        // LIGHTBOX PARA IA GENERATIVA
+        // ============================================
+
+        // Array de imágenes de IA con IDs
+        const iaImages = [
+            {
+                id: 'cyberpunk',
+                src: '../assets/images/depresion.png',
+                title: 'Cyberpunk Cityscape',
+                description: 'Generado con Stable Diffusion + ControlNet. Ciudad futurista con efectos de neón y arquitectura cyberpunk.'
+            },
+            {
+                id: 'futurista',
+                src: '../assets/images/chica_anime1.jpg',
+                title: 'Diseño Futurista',
+                description: 'Creación con Leonardo.Ai para concepto de interfaz de usuario con estética anime futurista.'
+            },
+            {
+                id: 'personaje',
+                src: '../assets/images/persona_cyberpunk.jpg',
+                title: 'Personaje IA Generado',
+                description: 'Diseño de personaje cyberpunk para proyecto de videojuego con múltiples variantes y detalles biomecánicos.'
+            },
+            {
+                id: 'paisaje',
+                src: '../assets/images/paisaje_japones1.jpg',
+                title: 'Paisaje Japonés',
+                description: 'Paisaje tradicional japonés con cerezos y montañas, generado con Stable Diffusion.'
+            },
+            {
+                id: 'abstracto',
+                src: '../assets/images/personaje_cyberpunk1.jpg',
+                title: 'Arte Abstracto Digital',
+                description: 'Exploración de formas y colores generada con Nano Banana AI, fusión de arte tradicional y digital.'
+            },
+            {
+                id: 'concept',
+                src: '../assets/images/personajes_animados.jpg',
+                title: 'Concept Art para Juego',
+                description: 'Diseño de personajes animados para proyecto de videojuego independiente con paleta de colores vibrante.'
+            }
+        ];
+
+        let currentIAIndex = 0;
+
+        // Función para obtener parámetros de la URL
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Verificar si hay parámetro de imagen en la URL
+        const imageParam = getUrlParameter('image');
+        if (imageParam) {
+            // Buscar la imagen por ID
+            const imageIndex = iaImages.findIndex(img => img.id === imageParam);
+            if (imageIndex !== -1) {
+                currentIAIndex = imageIndex;
+                // Abrir automáticamente el lightbox después de un pequeño delay
+                setTimeout(() => {
+                    openIALightbox(currentIAIndex);
+                }, 300); // Pequeño delay para que cargue la página
+            }
+        }
+
+        // Función para abrir lightbox
+        function openIALightbox(index) {
+            console.log('🖼️ Abriendo lightbox IA con índice:', index);
+            currentIAIndex = index;
+            updateIALightbox();
+            document.getElementById('iaLightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Función para abrir lightbox por ID
+        function openIALightboxById(imageId) {
+            const imageIndex = iaImages.findIndex(img => img.id === imageId);
+            if (imageIndex !== -1) {
+                openIALightbox(imageIndex);
+            }
+        }
+
+        // Función para cerrar lightbox
+        function closeIALightbox() {
+            console.log('🚪 Cerrando lightbox IA');
+            document.getElementById('iaLightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Cambiar imagen
+        function changeIAImage(direction) {
+            currentIAIndex += direction;
+            
+            // Circular navigation
+            if (currentIAIndex < 0) {
+                currentIAIndex = iaImages.length - 1;
+            } else if (currentIAIndex >= iaImages.length) {
+                currentIAIndex = 0;
+            }
+            
+            updateIALightbox();
+        }
+
+        // Actualizar contenido del lightbox
+        function updateIALightbox() {
+            const lightboxImage = document.getElementById('iaLightboxImage');
+            const imageCounter = document.getElementById('iaImageCounter');
+            const lightboxTitle = document.getElementById('iaLightboxTitle');
+            const lightboxDescription = document.getElementById('iaLightboxDescription');
+            
+            // Actualizar imagen
+            lightboxImage.src = iaImages[currentIAIndex].src;
+            lightboxImage.alt = iaImages[currentIAIndex].title;
+            
+            // Actualizar contador
+            imageCounter.textContent = `${currentIAIndex + 1} / ${iaImages.length}`;
+            
+            // Actualizar título y descripción
+            lightboxTitle.textContent = iaImages[currentIAIndex].title;
+            lightboxDescription.textContent = iaImages[currentIAIndex].description;
+        }
+
+        // Navegación con teclado
+        document.addEventListener('keydown', function(event) {
+            const lightbox = document.getElementById('iaLightbox');
+            
+            if (!lightbox.classList.contains('active')) return;
+            
+            switch(event.key) {
+                case 'Escape':
+                    closeIALightbox();
+                    break;
+                case 'ArrowLeft':
+                    changeIAImage(-1);
+                    break;
+                case 'ArrowRight':
+                    changeIAImage(1);
+                    break;
+            }
+        });
+
+        // Cerrar al hacer clic fuera de la imagen
+        document.addEventListener('click', function(event) {
+            const lightbox = document.getElementById('iaLightbox');
+            
+            if (lightbox.classList.contains('active') && 
+                event.target.classList.contains('lightbox-backdrop')) {
+                closeIALightbox();
+            }
+        });
+
+        // Debug
+        console.log('🎨 Lightbox IA Generativa cargado');
+        console.log('📸 Imágenes disponibles:', iaImages.length);
+        console.log('🔗 Parámetro de URL:', imageParam || 'Ninguno');
+    </script>
+</body>
+</html>
