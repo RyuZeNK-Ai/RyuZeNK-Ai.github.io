@@ -134,3 +134,58 @@ img, video, iframe {
         font-size: 16px !important;
     }
 }
+/* ============================================
+   FIX PARA TÍTULO "Fullstack Developer + IA Generativa"
+   ============================================ */
+
+@media (max-width: 767px) {
+    .home-text h1 {
+        /* Controlar el break de línea */
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        
+        /* Ajustar tamaño y espaciado */
+        font-size: clamp(1.8rem, 5.5vw, 2.2rem) !important;
+        line-height: 1.3 !important;
+        margin-bottom: 15px !important;
+        
+        /* Forzar break en puntos específicos */
+        display: inline-block;
+        width: 100%;
+    }
+    
+    /* Si quieres control exacto de dónde se rompe */
+    .home-text h1 br {
+        display: block;
+        content: "";
+        margin-bottom: 5px;
+    }
+    
+    /* Versión alternativa: dos líneas separadas */
+    .home-text h1 {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* Para móviles muy pequeños */
+@media (max-width: 480px) {
+    .home-text h1 {
+        font-size: clamp(1.6rem, 5vw, 1.9rem) !important;
+        /* Opción: usar flex para controlar líneas */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    /* Separar visualmente las dos partes */
+    .home-text h1::after {
+        content: "";
+        width: 100%;
+        height: 0;
+        order: 1; /* Para forzar salto si es necesario */
+    }
+}
