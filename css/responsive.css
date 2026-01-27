@@ -1,545 +1,856 @@
 /* ============================================
-   RESPONSIVE.CSS - Mínimo 360px hasta tablet
-   Optimizado para móviles pequeños hasta tablets
+   RESPONSIVE.CSS - Mobile First (360px → PC)
+   Corrección específica para la imagen circular
    ============================================ */
 
-/* 1. MÓVILES MUY PEQUEÑOS (360px - 479px) */
-@media (min-width: 360px) and (max-width: 479px) {
+   
+/* 1. VARIABLES PARA BREAKPOINTS */
+:root {
+    --mobile-xs: 360px;
+    --mobile-sm: 480px;
+    --mobile-md: 640px;
+    --tablet-sm: 768px;
+    --tablet-md: 1024px;
+    --laptop-sm: 1280px;
+    --laptop-md: 1440px;
+    --desktop: 1920px;
+}
+
+/* 2. FIX ESPECÍFICO PARA LA IMAGEN CIRCULAR */
+/* Base: mantener siempre proporción 1:1 */
+.formal-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4; /* Esto fuerza relación cuadrada */
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    box-shadow: 
+        0 0 30px var(--primary-color),
+        0 0 60px rgba(0, 243, 255, 0.7);
+    animation: simple-glow-pulse 1s ease-in-out infinite alternate;
+}
+
+/* Contenedor de la imagen para controlar tamaño máximo */
+.home-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 3. RESET PARA MÓVILES (Base: 360px) */
+@media screen and (min-width: 360px) {
+    html {
+        font-size: 14px;
+    }
+    
     .container {
         width: 100%;
-        padding: 0 12px;
+        padding: 0 16px;
+        margin: 0 auto;
     }
     
-    /* Navbar compacta */
-    .navbar {
-        padding: 10px 0;
-        height: 60px;
-    }
-    
-    .logo {
-        font-size: 1.4rem;
-        padding: 5px 10px;
-    }
-    
-    .mobile-menu-btn {
-        font-size: 1.4rem;
-        padding: 6px 10px;
-        width: 40px;
-        height: 40px;
-    }
-    
-    /* Menú móvil optimizado */
-    .nav-links {
-        top: 60px;
-        max-height: calc(100vh - 60px);
-        overflow-y: auto;
-    }
-    
-    .nav-links a {
-        padding: 12px 15px;
-        font-size: 1rem;
-    }
-    
-    /* Home Section - Móviles muy pequeños */
+    /* HOME SECTION - Mobile First */
     #home {
-        padding-top: 100px;
+        padding-top: 120px;
         min-height: auto;
     }
     
-    .home-text h1 {
-        font-size: 1.6rem;
-        line-height: 1.3;
+    .home-content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
     
-    .home-text p {
-        font-size: 0.95rem;
-        line-height: 1.4;
+    .home-text h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+        text-align: center;
     }
     
     .h1-logo {
-        font-size: 0.9rem;
-    }
-    
-    .ryuzenk-logo,
-    .ai-logo {
         font-size: 1rem;
     }
     
-    .formal-img {
-        max-width: 250px;
-        height: 250px;
-        margin: 20px auto;
+    .ryuzenk-logo, .ai-logo {
+        font-size: 1.1rem;
     }
     
-    /* Botones en móviles pequeños */
+    .about-me {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        text-align: center;
+    }
+    
+    .home-image {
+        order: -1;
+        max-width: 280px; /* Tamaño máximo en móvil */
+        margin: 0 auto;
+    }
+    
+    .formal-img {
+        width: 100%;
+        max-width: 280px; /* Forzar tamaño máximo */
+    }
+    
+    /* Botones Home - Mobile */
     .home-buttons {
         flex-direction: column;
-        gap: 10px;
+        align-items: center;
+        gap: 12px;
     }
     
     .btnVer, .btnDownload {
         width: 100%;
-        padding: 14px 15px;
+        max-width: 300px;
+        padding: 16px 20px;
         font-size: 1rem;
-        margin: 5px 0;
+        margin: 0;
     }
     
-    /* Quick Links en móvil pequeño */
+    /* Quick Links - Mobile */
     .quick-links {
         flex-direction: column;
+        align-items: center;
         gap: 15px;
+        margin-top: 40px;
     }
     
     .quick-link {
         width: 100%;
         max-width: 320px;
         min-height: 140px;
-        padding: 20px 15px;
-        margin: 0 auto;
+        padding: 20px;
     }
     
-    .quick-link i {
-        font-size: 2.2rem;
-        margin-bottom: 10px;
+    /* NAVBAR - Mobile First */
+    .navbar {
+        padding: 12px 0;
+        height: 70px;
     }
     
-    .quick-link span {
-        font-size: 1.1rem;
-    }
-    
-    /* Project Cards - 1 columna */
-    .projects-grid,
-    .gallery-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .project-card {
-        max-width: 100%;
-    }
-    
-    .project-image {
-        height: 180px;
-    }
-    
-    .project-info h4 {
-        font-size: 1.1rem;
-    }
-    
-    .project-info p {
-        font-size: 0.85rem;
-    }
-    
-    /* Botones pequeños en móvil */
-    .btn-small {
-        padding: 10px 12px;
-        font-size: 0.8rem;
-        margin: 4px 2px;
-        min-width: 90px;
-    }
-    
-    .project-links {
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-    
-    .project-links .btn-small {
-        flex: 1;
-        min-width: calc(50% - 8px);
-        text-align: center;
-    }
-    
-    /* Footer ajustado */
-    .footer {
-        padding: 30px 0 15px;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    
-    .footer-logo .logo {
-        font-size: 1.4rem;
-    }
-    
-    .social-icons a {
-        width: 38px;
-        height: 38px;
-        font-size: 1.1rem;
-    }
-    
-    /* Formulario compacto */
-    .contact-form {
-        padding: 20px 15px;
-    }
-    
-    .contact-form h3 {
-        font-size: 1.3rem;
-    }
-    
-    .form-group input,
-    .form-group textarea {
-        padding: 10px 12px;
-        font-size: 0.9rem;
-    }
-    
-    .btn-send {
-        padding: 12px 15px;
-        font-size: 0.95rem;
-    }
-    
-    /* Contact items en móvil pequeño */
-    .contact-item {
-        padding: 15px;
-        max-width: 100%;
-    }
-    
-    .contact-item i {
-        font-size: 2.2rem;
-    }
-    
-    /* Scroll top button ajustado */
-    .scroll-top-btn {
-        bottom: 15px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
-        font-size: 1.1rem;
-    }
-    
-    /* Lightbox para móviles pequeños */
-    .lightbox-modal {
-        width: 96%;
-        max-width: 360px;
-    }
-    
-    .lightbox-image-wrapper {
-        height: 200px;
-        padding: 8px;
-    }
-    
-    .lightbox-controls {
-        padding: 8px;
-        gap: 12px;
-    }
-    
-    #imageCounter,
-    #iaImageCounter {
-        font-size: 0.85rem;
-    }
-}
-
-/* 2. MÓVILES MEDIANOS (480px - 767px) */
-@media (min-width: 480px) and (max-width: 767px) {
-    .container {
-        width: 95%;
-        padding: 0 20px;
-    }
-    
-    /* Navbar */
     .logo {
         font-size: 1.5rem;
-    }
-    
-    .mobile-menu-btn {
-        font-size: 1.6rem;
         padding: 8px 12px;
     }
     
-    /* Home Section */
-    .home-text h1 {
-        font-size: 1.8rem;
-    }
-    
-    .home-text p {
-        font-size: 1rem;
-    }
-    
-    .formal-img {
-        max-width: 280px;
-        height: 280px;
-    }
-    
-    /* Quick Links - 2 en fila */
-    .quick-links {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-    
-    .quick-link {
-        width: calc(50% - 20px);
-        min-width: 180px;
-        min-height: 160px;
-    }
-    
-    /* Project Cards - 2 columnas en móviles medianos */
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-    
-    .project-card {
-        max-width: 100%;
-    }
-    
-    .project-image {
-        height: 200px;
-    }
-    
-    /* Gallery - 2 columnas */
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-    
-    /* Formulario */
-    .contact-form {
-        padding: 25px 20px;
-    }
-    
-    .contact-form h3 {
+    .mobile-menu-btn {
+        display: flex;
+        width: 44px;
+        height: 44px;
         font-size: 1.4rem;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 26, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 0;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .nav-links.active {
+        max-height: 400px;
+        padding: 20px 0;
+    }
+    
+    /* PROJECT CARDS - Mobile (1 columna) */
+    .projects-grid, 
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
-/* 3. TABLETS (768px - 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* 4. MÓVILES PEQUEÑOS (480px - 639px) - Aquí se ve bien */
+@media screen and (min-width: 480px) {
+    html {
+        font-size: 15px;
+    }
+    
     .container {
-        max-width: 768px;
-        padding: 0 25px;
-    }
-    
-    /* Navbar para tablet */
-    .nav-links {
-        gap: 15px;
-    }
-    
-    .nav-links li {
-        margin-left: 15px;
-    }
-    
-    .nav-links a {
-        font-size: 1rem;
-        padding: 5px 8px;
-    }
-    
-    /* Home Section - 2 columnas */
-    .home-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
+        width: 90%;
     }
     
     .home-text h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+    
+    .home-image {
+        max-width: 320px; /* Aumentamos tamaño */
     }
     
     .formal-img {
         max-width: 320px;
-        height: 320px;
     }
     
-    /* Quick Links - 2 en fila */
+    .quick-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .quick-link {
+        width: calc(50% - 10px);
+        max-width: 220px;
+    }
+    
+    /* Project Cards - 2 columnas */
+    .projects-grid,
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 5. RANGO PROBLEMÁTICO (640px - 767px) - FIX ESPECIAL */
+@media screen and (min-width: 640px) and (max-width: 767px) {
+    .container {
+        width: 85%;
+        max-width: 600px;
+    }
+    
+    /* HOME CONTENT FIX: Evitar compresión */
+    .home-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .home-image {
+        order: 2;
+        flex: 0 0 auto; /* No crecer, no encoger */
+        width: 45%; /* Ancho fijo porcentual */
+        max-width: 280px; /* Mantener máximo */
+        min-width: 250px; /* Evitar que sea demasiado pequeño */
+    }
+    
+    .formal-img {
+        width: 100%;
+        max-width: 100%; /* Usar todo el ancho disponible del contenedor */
+        height: auto;
+        aspect-ratio: 1 / 1; /* Mantener cuadrado */
+    }
+    
+    .home-text {
+        flex: 1;
+        min-width: 0; /* Permitir que se reduzca */
+    }
+    
+    .home-text h1 {
+        font-size: 2.2rem;
+        text-align: left;
+    }
+    
+    .about-me {
+        text-align: left;
+    }
+    
+    .home-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    
+    .btnVer, .btnDownload {
+        width: auto;
+        min-width: 200px;
+    }
+}
+
+/* 6. TABLETS (768px - 1023px) */
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+    
+    .container {
+        max-width: 720px;
+    }
+    
+    .navbar {
+        padding: 15px 0;
+        height: 80px;
+    }
+    
+    .logo {
+        font-size: 1.8rem;
+    }
+    
+    .mobile-menu-btn {
+        display: none;
+    }
+    
+    .nav-links {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        max-height: none;
+        background: transparent;
+        padding: 0;
+        width: auto;
+    }
+    
+    /* Home Section - Tablet */
+    #home {
+        padding-top: 160px;
+        min-height: 80vh;
+    }
+    
+    .home-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .home-image {
+        max-width: 350px; /* Tamaño mayor en tablet */
+        width: auto;
+    }
+    
+    .formal-img {
+        max-width: 350px;
+    }
+    
+    /* Quick Links - Tablet */
     .quick-links {
         gap: 25px;
     }
     
     .quick-link {
         width: 240px;
-        min-height: 200px;
-        padding: 30px 20px;
+        min-height: 180px;
+        padding: 25px;
     }
     
-    /* Project Cards - 2 columnas */
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-    
-    .project-image {
-        height: 220px;
-    }
-    
-    /* Gallery - 3 columnas */
+    /* Projects - 2 columnas */
+    .projects-grid,
     .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-    }
-    
-    /* Contact Section - 2 columnas */
-    .contact-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-    }
-    
-    /* Footer - 3 columnas */
-    .footer-content {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-    }
-    
-    /* Detalles proyecto */
-    .project-detail-section {
-        padding-top: 140px;
-    }
-    
-    .project-title {
-        font-size: 2rem;
-    }
-    
-    .project-hero-image img {
-        height: 300px;
-    }
-    
-    /* Tabs en tablet */
-    .tabs-nav {
-        gap: 15px;
-    }
-    
-    .tab-btn {
-        padding: 12px 20px;
-        font-size: 1rem;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* 4. PANTALLAS PEQUEÑAS EN LANDSCAPE (Móvil horizontal) */
-@media (max-height: 500px) and (orientation: landscape) {
+/* 7. TABLETS GRANDES (1024px - 1279px) - Rango problemático alto */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    /* FIX ESPECIAL para evitar ovalo */
+    .home-image {
+        max-width: 380px; /* Tamaño intermedio */
+        flex: 0 0 380px; /* Ancho fijo */
+    }
+    
+    .formal-img {
+        max-width: 380px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1; /* Garantizar cuadrado */
+    }
+    
+    .home-text h1 {
+        font-size: 2.8rem;
+    }
+    
+    /* Asegurar que el contenedor no comprima la imagen */
+    .home-content {
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+    }
+    
+    .home-text {
+        flex: 1;
+        max-width: 500px; /* Limitar ancho del texto */
+    }
+}
+
+/* 8. LAPTOPS (1280px - 1439px) */
+@media screen and (min-width: 1280px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    .home-text h1 {
+        font-size: 3rem;
+    }
+    
+    .home-image {
+        max-width: 420px; /* Tamaño final deseado */
+    }
+    
+    .formal-img {
+        max-width: 420px;
+    }
+    
+    .section {
+        padding: 100px 0;
+    }
+    
     #home {
-        padding-top: 90px;
+        padding-top: 180px;
+        min-height: 90vh;
+    }
+    
+    /* Projects - 3 columnas */
+    .projects-grid,
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 9. DESKTOP GRANDE (1440px+) */
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .home-text h1 {
+        font-size: 3.2rem;
+    }
+    
+    .home-image {
+        max-width: 450px;
+    }
+    
+    .formal-img {
+        max-width: 450px;
+    }
+    
+    .quick-link {
+        width: 280px;
+        min-height: 220px;
+    }
+}
+
+/* 10. DESKTOP EXTRA GRANDE (1920px+) */
+@media screen and (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    html {
+        font-size: 18px;
+    }
+    
+    .home-text h1 {
+        font-size: 3.5rem;
+    }
+    
+    .home-image {
+        max-width: 500px;
+    }
+    
+    .formal-img {
+        max-width: 500px;
+    }
+}
+
+/* 11. AJUSTES ESPECIALES */
+
+/* Landscape móviles */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    #home {
+        padding-top: 100px;
         min-height: auto;
     }
     
     .home-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        flex-direction: row;
+        gap: 30px;
     }
     
     .home-text h1 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
     
-    .home-text p {
-        font-size: 0.9rem;
-        line-height: 1.3;
+    .home-image {
+        max-width: 200px;
+    }
+    
+    .formal-img {
+        max-width: 200px;
+    }
+}
+
+/* Pantallas muy cortas */
+@media screen and (max-height: 400px) {
+    .navbar {
+        height: 60px;
+    }
+    
+    #home {
+        padding-top: 100px;
+    }
+    
+    .home-image {
+        max-width: 180px;
     }
     
     .formal-img {
         max-width: 180px;
-        height: 180px;
-    }
-    
-    .nav-links.active {
-        max-height: 70vh;
-        overflow-y: auto;
-    }
-    
-    /* Quick links en landscape */
-    .quick-links {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-    
-    .quick-link {
-        min-height: 120px;
-        padding: 15px;
-    }
-    
-    .quick-link i {
-        font-size: 2rem;
-        margin-bottom: 8px;
-    }
-    
-    .quick-link span {
-        font-size: 1rem;
     }
 }
 
-/* 5. TABLETS EN LANDSCAPE (768px - 1024px ancho) */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    .container {
-        max-width: 900px;
-    }
-    
-    .home-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-    }
-    
-    .home-text h1 {
-        font-size: 2.4rem;
-    }
-    
+/* FALLBACK para navegadores que no soportan aspect-ratio */
+@supports not (aspect-ratio: 1 / 1) {
     .formal-img {
-        max-width: 350px;
-        height: 350px;
+        height: 0;
+        padding-bottom: 100%; /* Truco viejo para mantener cuadrado */
+        position: relative;
     }
     
-    /* Quick Links en 2 filas si es necesario */
-    .quick-links {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    /* Project Cards - 3 columnas en landscape */
-    .projects-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .formal-img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
 
-/* 6. AJUSTES ESPECIALES PARA PANTALLAS MUY CORTAS */
-@media (max-height: 400px) {
-    .navbar {
-        padding: 5px 0;
-        height: 50px;
-    }
-    
-    .logo {
-        font-size: 1.2rem;
-    }
-    
-    #home {
-        padding-top: 80px;
-    }
-    
-    .section {
-        padding: 40px 0;
-    }
-    
-    .formal-img {
-        max-width: 150px;
-        height: 150px;
-    }
-    
-    .scroll-top-btn {
-        bottom: 10px;
-        right: 10px;
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
+/* Optimizar para touch */
+@media (hover: none) and (pointer: coarse) {
+    .btnVer, .btnDownload, .btn-small {
+        min-height: 44px; /* Tamaño mínimo para dedos */
     }
 }
 
-/* 7. EVITAR ZOOM EN INPUTS EN IOS */
-@media screen and (max-width: 767px) {
+/* Evitar zoom en inputs iOS */
+@media screen and (max-width: 768px) {
     input,
     select,
     textarea {
         font-size: 16px !important;
     }
 }
+/* ============================================
+   AJUSTES ESPECÍFICOS PARA EL ÓVALO
+   ============================================ */
 
-/* 8. MEJORAR VISIBILIDAD EN MÓVILES CON POCA RESOLUCIÓN */
-@media (max-width: 360px) {
-    /* Forzar mínimo de 360px aunque el viewport sea más pequeño */
-    body {
-        min-width: 360px;
-        overflow-x: auto;
+/* Móvil pequeño (360px-767px) */
+@media screen and (max-width: 767px) {
+    .formal-img {
+        max-width: 280px;
+        height: 340px;
+        /* BORRA ESTA LÍNEA: */
+        /* border-radius: 140px 140px 140px 140px / 170px 170px 170px 170px; */
+    }
+}
+
+/* Tablet (768px-1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .formal-img {
+        max-width: 320px;
+        height: 400px;
+        /* BORRA ESTA LÍNEA: */
+        /* border-radius: 160px 160px 160px 160px / 200px 200px 200px 200px; */
+    }
+}
+
+/* Laptop (1024px-1279px) */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .formal-img {
+        max-width: 380px;
+        height: 480px;
+        /* BORRA ESTA LÍNEA: */
+        /* border-radius: 190px 190px 190px 190px / 240px 240px 240px 240px; */
+    }
+}
+
+/* Desktop (1280px+) */
+@media screen and (min-width: 1280px) {
+    .formal-img {
+        max-width: 420px;
+        height: 520px;
+        /* BORRA ESTA LÍNEA: */
+        /* border-radius: 210px 210px 210px 210px / 260px 260px 260px 260px; */
+    }
+}
+/* ============================================
+   FIX LAYOUT HOME - IMAGEN DERECHA, TEXTO IZQUIERDA
+   ============================================ */
+
+/* Para pantallas grandes (tablet y desktop) */
+@media screen and (min-width: 768px) {
+    .home-content {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
     }
     
-    .container {
-        min-width: 360px;
+    .home-text {
+        order: 1 !important; /* Texto primero (izquierda) */
+        flex: 1;
+        text-align: left !important;
     }
+    
+    .home-image {
+        order: 2 !important; /* Imagen después (derecha) */
+        flex-shrink: 0;
+    }
+    
+    .home-text h1,
+    .about-me {
+        text-align: left !important;
+    }
+    
+    .home-buttons {
+        justify-content: flex-start !important;
+    }
+}
+/* ============================================
+   COMPACTAR LA PÁGINA - MENOS ESPACIOS, MÁS CONTENIDO
+   ============================================ */
+
+/* REDUCIR ESPACIOS GENERALES */
+@media screen and (min-width: 768px) {
+    /* Contenedor principal más compacto */
+    .container {
+        max-width: 95% !important;
+    }
+    
+    /* Reducir padding de secciones */
+    .section {
+        padding: 60px 0 !important;
+    }
+    
+    #home {
+        padding-top: 120px !important;
+        min-height: auto !important;
+    }
+    
+    /* Home content más compacto */
+    .home-content {
+        gap: 40px !important;
+    }
+    
+    /* Reducir tamaño de imagen ovalada */
+    .home-image {
+        max-width: 320px !important;
+    }
+    
+    .formal-img {
+        max-width: 320px !important;
+        height: 420px !important; /* Mantener proporción óvalo */
+    }
+    
+    /* Reducir tamaño de fuente en home */
+    .home-text h1 {
+        font-size: 2.2rem !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .about-me {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* Botones más compactos */
+    .btnVer, .btnDownload {
+        padding: 14px 25px !important;
+        font-size: 1rem !important;
+        margin: 5px !important;
+    }
+    
+    /* Quick links más compactos */
+    .quick-links {
+        margin-top: 50px !important;
+        gap: 20px !important;
+    }
+    
+    .quick-link {
+        width: 220px !important;
+        min-height: 160px !important;
+        padding: 20px !important;
+    }
+    
+    .quick-link i {
+        font-size: 2.8rem !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .quick-link span {
+        font-size: 1.1rem !important;
+    }
+}
+
+/* PARA LAPTOPS Y DESKTOP (más compacto aún) */
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 1100px !important;
+    }
+    
+    .home-content {
+        gap: 50px !important;
+    }
+    
+    .home-image {
+        max-width: 350px !important;
+    }
+    
+    .formal-img {
+        max-width: 350px !important;
+        height: 460px !important;
+    }
+    
+    .home-text h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    /* Secciones de proyectos más compactas */
+    .section-title {
+        margin-bottom: 40px !important;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem !important;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem !important;
+        margin-top: 10px !important;
+    }
+    
+    /* Grid de proyectos más compacto */
+    .projects-grid,
+    .gallery-grid {
+        gap: 25px !important;
+    }
+    
+    .project-card,
+    .gallery-item {
+        margin-bottom: 0 !important;
+    }
+    
+    /* Contact section más compacta */
+    .contact-section {
+        padding-top: 140px !important;
+    }
+    
+    .contact-content {
+        gap: 40px !important;
+    }
+    
+    .contact-form {
+        padding: 30px !important;
+    }
+    
+    /* Footer más compacto */
+    .footer {
+        padding: 40px 0 20px !important;
+        margin-top: 40px !important;
+    }
+    
+    .footer-content {
+        gap: 40px !important;
+    }
+}
+
+/* PARA PANTALLAS MUY GRANDES (evitar que se expanda demasiado) */
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1300px !important;
+    }
+    
+    .home-content {
+        gap: 60px !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+    }
+    
+    .home-image {
+        max-width: 380px !important;
+    }
+    
+    .formal-img {
+        max-width: 380px !important;
+        height: 500px !important;
+    }
+    
+    .home-text {
+        max-width: 600px !important;
+    }
+    
+    /* Limitar ancho máximo de contenido */
+    .projects-grid,
+    .gallery-grid {
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+    }
+}
+
+/* REDUCIR ESPACIOS VERTICALES EXTREMOS */
+@media screen and (min-width: 768px) {
+    /* Reducir espacios entre secciones */
+    #developer,
+    #ai {
+        padding-top: 40px !important;
+        padding-bottom: 60px !important;
+    }
+    
+    /* Header sections más compactas */
+    .section-title {
+        padding-bottom: 10px !important;
+    }
+    
+    /* Project cards internas más compactas */
+    .project-info {
+        padding: 20px !important;
+    }
+    
+    .project-info h4 {
+        font-size: 1.2rem !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .project-info p {
+        font-size: 0.9rem !important;
+        margin-bottom: 15px !important;
+        line-height: 1.4 !important;
+    }
+    
+    .project-links {
+        margin-top: 15px !important;
+    }
+    
+    .btn-small {
+        padding: 8px 12px !important;
+        font-size: 0.85rem !important;
+    }
+}
+
+/* COMPACTAR NAVBAR */
+@media screen and (min-width: 768px) {
+    .navbar {
+        padding: 10px 0 !important;
+        height: 70px !important;
+    }
+    
+    .nav-links li {
+        margin-left: 20px !important;
+    }
+    
+    .nav-links a {
+        font-size: 1rem !important;
+        padding: 6px 10px !important;
+    }
+}
+
+/* COMPACTAR SCROLL TOP BUTTON */
+.scroll-top-btn {
+    bottom: 20px !important;
+    right: 20px !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.1rem !important;
 }
