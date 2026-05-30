@@ -153,6 +153,16 @@ body {
     padding: 100px 0;
 }
 
+/* Especificidad (1,1,0) — gana sobre responsive.css #developer,#ai (1,0,0) */
+#developer.section {
+    padding-top: 130px !important;
+}
+
+#ai.section {
+    padding-top: 110px !important;
+    padding-bottom: 160px !important;
+}
+
 .section-title {
     text-align: center;
     margin-bottom: 3rem;
@@ -180,17 +190,30 @@ body {
    SECCIÓN HOME / INICIO
    ============================================ */
 #home {
-    padding-top: 180px;
-    min-height: 90vh;
+    padding-top: 220px;
+    padding-bottom: 80px;
     display: flex;
     align-items: center;
 }
 
+/* Especificidad (1,1,0) — supera responsive.css #home (1,0,0) !important */
+#home.section {
+    padding-top: 170px !important;
+}
+
 .home-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 2fr;
     gap: 3rem;
     align-items: center;
+    margin-left: 5%;
+}
+
+@media (min-width: 768px) {
+    #home .home-image {
+        margin-right: 40px;
+        margin-left: 30px;
+    }
 }
 
 .home-text {
@@ -203,11 +226,12 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    text-shadow: 
+    text-shadow:
         0 0 1px rgba(255, 255, 255, 0.9),
         0 0 10px rgba(0, 243, 255, 0.7),
         0 0 20px rgba(0, 243, 255, 0.5);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
+    margin-left: 0 !important;
     text-align: left;
     white-space: nowrap;
 }
@@ -231,10 +255,28 @@ body {
     font-size: 1.15rem;
     line-height: 1.5;
     margin-bottom: 1rem;
-    max-width: 700px;
+    max-width: 100%;
     margin-left: 0;
     margin-right: auto;
     color: #ccc;
+}
+
+.about-me {
+    font-size: 0.7rem !important;
+    margin-left: 0 !important;
+    margin-top: 2.5rem !important;
+    margin-bottom: 1.2rem !important;
+}
+
+.about-me .h1-logo,
+.about-me .ryuzenk-logo,
+.about-me .ai-logo {
+    font-size: 1.65rem !important;
+    display: inline;
+}
+
+.about-me {
+    max-width: 1000px !important;
 }
 
 .home-buttons {
@@ -244,6 +286,21 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
+}
+
+@media (min-width: 768px) {
+    #home .home-buttons {
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 28px !important;
+    }
+
+    #home .home-buttons .btnVer,
+    #home .home-buttons .btnDownload {
+        width: 200px !important;
+        text-align: center;
+        box-sizing: border-box;
+    }
 }
 
 /* ============================================
@@ -264,17 +321,22 @@ body {
     box-shadow: var(--neon-glow);
 }
 
+.btn {
+    will-change: transform, box-shadow;
+}
+
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(0, 243, 255, 0.5),
                 0 0 30px rgba(0, 243, 255, 0.4);
+    backface-visibility: hidden;
 }
 
 .btn-small {
     display: inline-block;
     background: rgba(255, 255, 255, 0.1);
     color: var(--light-color);
-    padding: 15px 5px;
+    padding: 15px 20px;
     border-radius: 20px;
     text-decoration: none;
     font-weight: 500;
@@ -286,6 +348,9 @@ body {
     flex: 1;
     min-width: 0;
     text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .btn-small:hover {
@@ -356,8 +421,8 @@ body {
 
 .formal-img {
     width: 100%;
-    max-width: 420px;
-    height: 420px;
+    max-width: 315px;
+    height: 315px;
     border-radius: 50%;
     object-fit: cover;
     position: relative;
@@ -484,6 +549,31 @@ body {
     margin-bottom: 3rem;
 }
 
+.fullstack-projects .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 860px !important;
+    margin: 0 auto !important;
+}
+
+.ai-projects .projects-grid {
+    justify-content: center;
+}
+
+/* Home: 2 cards fijas centradas — gana sobre responsive.css repeat(3, 1fr) e !important */
+@media (min-width: 768px) {
+    #developer .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 860px !important;
+        margin: 0 auto !important;
+    }
+
+    #ai .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 860px !important;
+        margin: 0 auto !important;
+    }
+}
+
 .project-card {
     background: rgba(26, 26, 46, 0.8);
     border-radius: 15px;
@@ -497,10 +587,15 @@ body {
     cursor: pointer;
 }
 
+.project-card {
+    will-change: transform, box-shadow;
+}
+
 .project-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary-color);
     box-shadow: var(--neon-glow);
+    backface-visibility: hidden;
 }
 
 .project-image {
@@ -518,10 +613,13 @@ body {
 .project-tech {
     position: absolute;
     bottom: 10px;
-    left: 10px;
+    left: 0;
+    right: 0;
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
+    justify-content: center;
+    padding: 0 10px;
 }
 
 .project-tech span {
@@ -556,6 +654,93 @@ body {
     justify-content: space-between;
     gap: 8px;
     margin-top: 1.5rem;
+}
+
+/* Home: cards simétricas con botones alineados al fondo */
+#developer .project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+#developer .project-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+}
+
+#developer .project-info p {
+    flex: 1;
+}
+
+#developer .project-info h4 {
+    font-size: 1.8rem !important;
+}
+
+#developer .project-links {
+    justify-content: center;
+}
+
+/* IA cards — mismo estilo visual que FullStack */
+#ai .project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+#ai .project-image {
+    height: 450px;
+}
+
+#ai .project-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+    padding: 0.5rem 1rem;
+}
+
+#ai .project-info p {
+    flex: 1;
+}
+
+#ai .project-info h4 {
+    font-size: 1.8rem !important;
+}
+
+#ai .project-links {
+    justify-content: center;
+}
+
+/* FullStack Dev - Igualar con #developer y #ai */
+.fullstack-projects .project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.fullstack-projects .project-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+}
+
+.fullstack-projects .project-info p {
+    flex: 1;
+}
+
+.fullstack-projects .project-info h4 {
+    font-size: 1.8rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fullstack-projects .project-links {
+    justify-content: center;
+}
+
+.fullstack-projects .project-image {
+    height: 350px;
 }
 
 .project-card.blocked {
@@ -627,7 +812,7 @@ body {
    SECCIÓN DE CONTACTO
    ============================================ */
 .contact-section {
-    padding-top: 180px;
+    padding-top: 220px;
     min-height: 100vh;
 }
 
@@ -636,6 +821,7 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     margin-top: 40px;
+    margin-left: 5%;
 }
 
 .contact-form {
@@ -809,7 +995,7 @@ a.contact-item {
    ============================================ */
 .footer {
     background: rgba(10, 10, 26, 0.95);
-    padding: 3rem 0 1.5rem;
+    padding: 1.5rem 0 0.7rem;
     margin-top: 4rem;
     border-top: 2px solid var(--primary-color);
     box-shadow: 0 -5px 30px rgba(0, 243, 255, 0.2);
@@ -819,7 +1005,11 @@ a.contact-item {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.7rem;
+    width: 90%;
+    max-width: 1200px;
+    margin-left: 12%;
+    margin-right: auto;
 }
 
 .footer-logo .logo {
@@ -830,7 +1020,7 @@ a.contact-item {
     text-decoration: none;
     text-shadow: var(--neon-glow);
     display: inline-block;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
 .footer-logo .logo span {
@@ -841,12 +1031,17 @@ a.contact-item {
 .footer-logo p {
     color: #ccc;
     font-size: 0.95rem;
+    margin: 0;
+}
+
+.footer-social {
+    margin-top: 0;
 }
 
 .footer-links h4,
 .footer-social h4 {
     font-size: 1.2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: var(--primary-color);
     text-shadow: 0 0 10px var(--primary-color);
 }
@@ -856,7 +1051,7 @@ a.contact-item {
 }
 
 .footer-links li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .footer-links a {
@@ -873,6 +1068,8 @@ a.contact-item {
 .social-icons {
     display: flex;
     gap: 1rem;
+    justify-content: flex-start;
+    margin-left: -0.5rem;
 }
 
 .social-icons a {
@@ -888,6 +1085,7 @@ a.contact-item {
     transition: all 0.3s ease;
     border: 1px solid rgba(0, 243, 255, 0.3);
     box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+    text-decoration: none;
 }
 
 .social-icons a:hover {
@@ -899,7 +1097,7 @@ a.contact-item {
 
 .footer-bottom {
     text-align: center;
-    padding-top: 1.5rem;
+    padding-top: 0.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #888;
     font-size: 0.9rem;
@@ -942,6 +1140,31 @@ a.contact-item {
         height: 45px;
         font-size: 1.3rem;
     }
+}
+
+/* ============================================
+   BADGES EN CARDS DEL HOME
+   ============================================ */
+.card-role-badge {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 8px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(157, 0, 255, 0.2);
+    color: var(--secondary-color);
+    border: 1px solid rgba(157, 0, 255, 0.4);
+}
+
+.card-role-badge.professional {
+    background: rgba(0, 243, 255, 0.2);
+    color: var(--primary-color);
+    border-color: rgba(0, 243, 255, 0.4);
 }
 
 /* ============================================

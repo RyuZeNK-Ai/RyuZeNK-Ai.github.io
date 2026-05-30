@@ -23,10 +23,10 @@
             </button>
             
             <ul class="nav-links" id="navLinks">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../pages/fullstack.html">Desarrollo Fullstack</a></li>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../pages/fullstack.html">FullStack Dev</a></li>
                 <li><a href="../pages/ia-generativa.html" class="active">IA Generativa</a></li>
-                <li><a href="../pages/contact.html">Contáctame</a></li>
+                <li><a href="../pages/contact.html">Contacto</a></li>
             </ul>
         </div>
     </nav>
@@ -38,241 +38,315 @@
                 <h2>IA Generativa</h2>
                 <p class="section-subtitle">Explora mis creaciones con inteligencia artificial</p>
             </div>
-            
+
             <!-- Pestañas de navegación -->
             <div class="tabs-nav">
-                <button class="tab-btn active" data-tab="all">
-                    <i class="fas fa-th"></i>
-                    <span>Todo</span>
-                </button>
-                <button class="tab-btn" data-tab="images">
+                <button class="tab-btn active" data-tab="images">
                     <i class="fas fa-image"></i>
                     <span>Imágenes</span>
                 </button>
-                <button class="tab-btn blocked" data-tab="videos">
+                <button class="tab-btn" data-tab="videos">
                     <i class="fas fa-video"></i>
                     <span>Videos</span>
                 </button>
-                <button class="tab-btn blocked" data-tab="prompts">
+                <button class="tab-btn" data-tab="prompts">
                     <i class="fas fa-keyboard"></i>
                     <span>Prompts</span>
                 </button>
             </div>
             
-            <!-- Sección Herramientas COMPACTA -->
-            <div class="tools-section">
-                <h3 class="tools-title">
-                    <i class="fas fa-tools"></i> Herramientas que Utilizo
-                </h3>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <i class="fas fa-palette"></i>
-                        <h4>Stable Diffusion</h4>
-                        <p>Arte conceptual y generación de imágenes</p>
-                    </div>
-                    
-                    <div class="tool-card">
-                        <i class="fas fa-magic"></i>
-                        <h4>Leonardo.Ai</h4>
-                        <p>Arte digital de alta calidad</p>
-                    </div>
-                    
-                    <div class="tool-card">
-                        <i class="fas fa-robot"></i>
-                        <h4>Nano Banana</h4>
-                        <p>Prototipado visual rápido</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Contenido: Todo (predeterminado) -->
-            <div class="tab-content active" id="tab-all">
-                <h3 class="gallery-title">
-                    <i class="fas fa-images"></i> Galería Completa
-                </h3>
-                
-                <div class="gallery-grid">
-                    <!-- Imagen 1 -->
-                    <div class="gallery-item" onclick="openIALightboxById('cyberpunk')">
-                        <div class="ia-image-container">
-                            <img src="../assets/images/depresion.png" alt="Arte Cyberpunk" class="gallery-image">
-                            <div class="ia-image-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span>Ver más grande</span>
-                            </div>
-                        </div>
-                        <div class="gallery-info">
-                            <h4>Demonio Reflejado</h4>
-                            <p>Generado con Nanobanana. Sujeto frente a una ventana.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Imagen 2 -->
-                    <div class="gallery-item" onclick="openIALightboxById('futurista')">
-                        <div class="ia-image-container">
-                            <img src="../assets/images/chica_anime1.jpg" alt="Arte Futurista" class="gallery-image">
-                            <div class="ia-image-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span>Ver más grande</span>
-                            </div>
-                        </div>
-                        <div class="gallery-info">
-                            <h4>Chica Anime</h4>
-                            <p>Creación con Stable Diffusion, Chica detallada con entorno calido. </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Imagen 3 -->
-                    <div class="gallery-item" onclick="openIALightboxById('personaje')">
-                        <div class="ia-image-container">
-                            <img src="../assets/images/persona_cyberpunk.jpg" alt="Personaje IA" class="gallery-image">
-                            <div class="ia-image-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span>Ver más grande</span>
-                            </div>
-                        </div>
-                        <div class="gallery-info">
-                            <h4>Persona IA Generado</h4>
-                            <p>Generado con Leonardo.Ai. Diseño de persona con estilo cyberpunk.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Sección bloqueada para Videos -->
-                <div class="blocked-content">
-                    <i class="fas fa-video"></i>
-                    <h3>Videos con IA - Próximamente</h3>
-                    <p>Sección en desarrollo. Próximamente podrás ver mis creaciones de video generado con IA.</p>
-                </div>
-                
-                <!-- Sección bloqueada para Prompts -->
-                <div class="blocked-content">
-                    <i class="fas fa-keyboard"></i>
-                    <h3>Prompts de IA - Próximamente</h3>
-                    <p>Sección en desarrollo. Próximamente compartiré mis prompts y técnicas para generar contenido con IA.</p>
-                </div>
-            </div>
-            
             <!-- Contenido: Solo Imágenes -->
-            <div class="tab-content" id="tab-images">
+            <div class="tab-content active" id="tab-images">
                 <h3 class="gallery-title">
                     <i class="fas fa-image"></i> Galería de Imágenes
                 </h3>
-                
-                <div class="gallery-grid">
-                    <!-- Imagen 1: Cyberpunk -->
-                    <div class="gallery-item" onclick="openIALightboxById('cyberpunk')">
-                        <div class="ia-image-container">
-                            <img src="../assets/images/depresion.png" alt="Arte Cyberpunk" class="gallery-image">
-                            <div class="ia-image-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span>Ver más grande</span>
+
+                <div class="projects-grid" id="ia-gallery">
+                    <!-- Imagen 1: Demonio Reflejado -->
+                    <div class="project-card" id="ia-galeria-inicio" onclick="openIALightboxById('cyberpunk')">
+                        <div class="project-image">
+                            <img loading="lazy" src="../assets/images/depresion.png" alt="Demonio Reflejado" class="gallery-image">
+                            <div class="project-tech">
+                                <span>Nano Banana</span>
+                                <span>Gemini</span>
                             </div>
                         </div>
-                        <div class="gallery-info">
-                            <h4>Demonio Reflejado</h4>
-                            <p>Generado con Nanobanana. Sujeto frente a una ventana.</p>
+                        <div class="project-info">
+                            <h4>Personaje Oscuro</h4>
                         </div>
                     </div>
-                    
-                    <!-- Imagen 2: Futurista -->
-                    <div class="gallery-item" onclick="openIALightboxById('futurista')">
-                        <div class="ia-image-container">
-                            <img src="../assets/images/chica_anime1.jpg" alt="Arte Futurista" class="gallery-image">
-                            <div class="ia-image-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span>Ver más grande</span>
+
+                    <!-- Imagen 2: Chica Anime -->
+                    <div class="project-card" onclick="openIALightboxById('futurista')">
+                        <div class="project-image">
+                            <img loading="lazy" src="../assets/images/chica_anime1.jpg" alt="Chica Anime" class="gallery-image">
+                            <div class="project-tech">
+                                <span>Stable Diffusion</span>
                             </div>
                         </div>
-                        <div class="gallery-info">
+                        <div class="project-info">
                             <h4>Chica Anime</h4>
-                            <p>Creación con Stable Diffusion, Chica detallada con entorno calido. </p>
                         </div>
                     </div>
-                    
-                    <!-- Imagen 3: Personaje -->
-                    <div class="gallery-item" onclick="openIALightboxById('personaje')">
-                        <div class="ia-image-container">
-                            <img src="../assets/images/persona_cyberpunk.jpg" alt="Personaje IA" class="gallery-image">
-                            <div class="ia-image-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span>Ver más grande</span>
+
+                    <!-- Imagen 3: Persona Cyberpunk -->
+                    <div class="project-card" onclick="openIALightboxById('personaje')">
+                        <div class="project-image">
+                            <img loading="lazy" src="../assets/images/persona_cyberpunk.jpg" alt="Persona Cyberpunk" class="gallery-image">
+                            <div class="project-tech">
+                                <span>Leonardo.Ai</span>
                             </div>
                         </div>
-                        <div class="gallery-info">
-                            <h4>Persona IA Generado</h4>
-                            <p>Generado con Leonardo.Ai. Diseño de persona con estilo cyberpunk.</p>
+                        <div class="project-info">
+                            <h4>Persona Cyberpunk</h4>
                         </div>
                     </div>
-                    
-                    <!-- Imagen 4: Paisaje -->
-                    <div class="gallery-item" onclick="openIALightboxById('paisaje')">
-                        <div class="ia-image-container">
-                            <img src="../assets/images/paisaje_japones1.jpg" alt="Paisaje Japonés" class="gallery-image">
-                            <div class="ia-image-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span>Ver más grande</span>
+
+                    <!-- Imagen 4: Paisaje Japonés -->
+                    <div class="project-card" onclick="openIALightboxById('paisaje')">
+                        <div class="project-image">
+                            <img loading="lazy" src="../assets/images/paisaje_japones1.jpg" alt="Paisaje Japonés" class="gallery-image">
+                            <div class="project-tech">
+                                <span>Nano Banana</span>
+                                <span>Gemini</span>
                             </div>
                         </div>
-                        <div class="gallery-info">
+                        <div class="project-info">
                             <h4>Paisaje Japonés</h4>
-                            <p>Paisaje tradicional japonés con cerezos y montañas, generado con Stable Diffusion.</p>
                         </div>
                     </div>
-                    
-                    <!-- Imagen 5: Abstracto -->
-                    <div class="gallery-item" onclick="openIALightboxById('abstracto')">
-                        <div class="ia-image-container">
-                            <img src="../assets/images/personaje_cyberpunk1.jpg" alt="Arte Abstracto" class="gallery-image">
-                            <div class="ia-image-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span>Ver más grande</span>
+
+                    <!-- Imagen 5: Personaje Cyberpunk -->
+                    <div class="project-card" id="ia-personaje-cyberpunk" onclick="openIALightboxById('abstracto')">
+                        <div class="project-image">
+                            <img loading="lazy" src="../assets/images/personaje_cyberpunk1.jpg" alt="Personaje Cyberpunk" class="gallery-image">
+                            <div class="project-tech">
+                                <span>Nano Banana</span>
+                                <span>Gemini</span>
                             </div>
                         </div>
-                        <div class="gallery-info">
-                            <h4>Personaje Propio Cyberpunk</h4>
-                            <p>Generado con Nanobanana. Personaje completamente personalizado.</p>
+                        <div class="project-info">
+                            <h4>Personaje Cyberpunk</h4>
                         </div>
                     </div>
-                    
-                    <!-- Imagen 6: Concept -->
-                    <div class="gallery-item" onclick="openIALightboxById('concept')">
-                        <div class="ia-image-container">
-                            <img src="../assets/images/personajes_animados.jpg" alt="Concept Art" class="gallery-image">
-                            <div class="ia-image-overlay">
-                                <i class="fas fa-search-plus"></i>
-                                <span>Ver más grande</span>
+
+                    <!-- Imagen 6: Personajes Animados -->
+                    <div class="project-card" onclick="openIALightboxById('concept')">
+                        <div class="project-image">
+                            <img loading="lazy" src="../assets/images/personajes_animados.jpg" alt="Personajes Anime" class="gallery-image">
+                            <div class="project-tech">
+                                <span>Nano Banana</span>
+                                <span>Gemini</span>
                             </div>
                         </div>
-                        <div class="gallery-info">
-                            <h4>Personajes Anime Generador</h4>
-                            <p>Generado con DALL·E. Diseño de personajes animados.</p>
+                        <div class="project-info">
+                            <h4>Personajes Anime</h4>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Contenido: Videos (bloqueado) -->
+            <!-- Contenido: Videos
+                 ⚠️ NOTA: ESTRUCTURA LISTA - Solo desbloquear botón arriba (quitar clase "blocked")
+                 No regenerar cards, solo cambiar tab-btn blocked a tab-btn
+            -->
             <div class="tab-content" id="tab-videos">
-                <div class="blocked-content">
-                    <i class="fas fa-video"></i>
-                    <h3>Videos con IA - Próximamente</h3>
-                    <p>Esta sección está actualmente en desarrollo. Próximamente podrás explorar mis creaciones de video generado con inteligencia artificial utilizando herramientas como Veo 3, Pika Labs y Stable Video.</p>
-                    <p class="blocked-note">
-                        <i class="fas fa-clock"></i> Disponible próximamente
-                    </p>
+                <h3 class="gallery-title">
+                    <i class="fas fa-video"></i> Galería de Videos
+                </h3>
+
+                <div class="projects-grid">
+                    <!-- Video 1 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="width: 100%; height: 100%; background: rgba(0, 243, 255, 0.1); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-video" style="font-size: 3rem; color: rgba(0, 243, 255, 0.3);"></i>
+                            </div>
+                            <div class="project-tech">
+                                <span>Veo 3</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Video 1</h4>
+                        </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="width: 100%; height: 100%; background: rgba(0, 243, 255, 0.1); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-video" style="font-size: 3rem; color: rgba(0, 243, 255, 0.3);"></i>
+                            </div>
+                            <div class="project-tech">
+                                <span>Pika Labs</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Video 2</h4>
+                        </div>
+                    </div>
+
+                    <!-- Video 3 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="width: 100%; height: 100%; background: rgba(0, 243, 255, 0.1); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-video" style="font-size: 3rem; color: rgba(0, 243, 255, 0.3);"></i>
+                            </div>
+                            <div class="project-tech">
+                                <span>Stable Video</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Video 3</h4>
+                        </div>
+                    </div>
+
+                    <!-- Video 4 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="width: 100%; height: 100%; background: rgba(0, 243, 255, 0.1); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-video" style="font-size: 3rem; color: rgba(0, 243, 255, 0.3);"></i>
+                            </div>
+                            <div class="project-tech">
+                                <span>Veo 3</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Video 4</h4>
+                        </div>
+                    </div>
+
+                    <!-- Video 5 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="width: 100%; height: 100%; background: rgba(0, 243, 255, 0.1); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-video" style="font-size: 3rem; color: rgba(0, 243, 255, 0.3);"></i>
+                            </div>
+                            <div class="project-tech">
+                                <span>Pika Labs</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Video 5</h4>
+                        </div>
+                    </div>
+
+                    <!-- Video 6 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="width: 100%; height: 100%; background: rgba(0, 243, 255, 0.1); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-video" style="font-size: 3rem; color: rgba(0, 243, 255, 0.3);"></i>
+                            </div>
+                            <div class="project-tech">
+                                <span>Stable Video</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Video 6</h4>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Contenido: Prompts (bloqueado) -->
+
+            <!-- Contenido: Prompts
+                 ⚠️ NOTA: ESTRUCTURA LISTA - Solo desbloquear botón arriba (quitar clase "blocked")
+                 No regenerar cards, solo cambiar tab-btn blocked a tab-btn
+            -->
             <div class="tab-content" id="tab-prompts">
-                <div class="blocked-content">
-                    <i class="fas fa-keyboard"></i>
-                    <h3>Prompts de IA - Próximamente</h3>
-                    <p>Esta sección está actualmente en desarrollo. Próximamente compartiré mis prompts, técnicas y estrategias para generar contenido de calidad con diferentes modelos de IA.</p>
-                    <p class="blocked-note">
-                        <i class="fas fa-clock"></i> Disponible próximamente
-                    </p>
+                <h3 class="gallery-title">
+                    <i class="fas fa-keyboard"></i> Galería de Prompts
+                </h3>
+
+                <div class="projects-grid">
+                    <!-- Prompt 1 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="width: 100%; height: 100%; background: rgba(255, 0, 128, 0.1); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-keyboard" style="font-size: 3rem; color: rgba(255, 0, 128, 0.3);"></i>
+                            </div>
+                            <div class="project-tech">
+                                <span>ChatGPT</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Prompt 1</h4>
+                        </div>
+                    </div>
+
+                    <!-- Prompt 2 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="width: 100%; height: 100%; background: rgba(255, 0, 128, 0.1); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-keyboard" style="font-size: 3rem; color: rgba(255, 0, 128, 0.3);"></i>
+                            </div>
+                            <div class="project-tech">
+                                <span>Claude</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Prompt 2</h4>
+                        </div>
+                    </div>
+
+                    <!-- Prompt 3 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="width: 100%; height: 100%; background: rgba(255, 0, 128, 0.1); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-keyboard" style="font-size: 3rem; color: rgba(255, 0, 128, 0.3);"></i>
+                            </div>
+                            <div class="project-tech">
+                                <span>Gemini</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Prompt 3</h4>
+                        </div>
+                    </div>
+
+                    <!-- Prompt 4 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="width: 100%; height: 100%; background: rgba(255, 0, 128, 0.1); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-keyboard" style="font-size: 3rem; color: rgba(255, 0, 128, 0.3);"></i>
+                            </div>
+                            <div class="project-tech">
+                                <span>ChatGPT</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Prompt 4</h4>
+                        </div>
+                    </div>
+
+                    <!-- Prompt 5 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="width: 100%; height: 100%; background: rgba(255, 0, 128, 0.1); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-keyboard" style="font-size: 3rem; color: rgba(255, 0, 128, 0.3);"></i>
+                            </div>
+                            <div class="project-tech">
+                                <span>Claude</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Prompt 5</h4>
+                        </div>
+                    </div>
+
+                    <!-- Prompt 6 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="width: 100%; height: 100%; background: rgba(255, 0, 128, 0.1); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-keyboard" style="font-size: 3rem; color: rgba(255, 0, 128, 0.3);"></i>
+                            </div>
+                            <div class="project-tech">
+                                <span>Gemini</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>Prompt 6</h4>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -284,20 +358,10 @@
                         <i class="fas fa-times"></i>
                     </button>
                     <div class="lightbox-image-wrapper">
-                        <img id="iaLightboxImage" src="" alt="">
-                    </div>
-                    <div class="lightbox-controls">
-                        <button class="lightbox-prev" onclick="changeIAImage(-1)">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <span id="iaImageCounter">1 / 6</span>
-                        <button class="lightbox-next" onclick="changeIAImage(1)">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
+                        <img loading="lazy" id="iaLightboxImage" src="" alt="">
                     </div>
                     <div class="lightbox-caption">
                         <h3 id="iaLightboxTitle"></h3>
-                        <p id="iaLightboxDescription"></p>
                     </div>
                 </div>
             </div>
@@ -309,6 +373,16 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal Bloqueado -->
+    <div id="blockedModal" class="blocked-modal">
+        <div class="blocked-modal-content">
+            <button class="close-btn">&times;</button>
+            <i class="fas fa-lock"></i>
+            <h2>Proximamente</h2>
+            <p>Este contenido estará disponible muy pronto.</p>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -322,10 +396,10 @@
                 <div class="footer-links">
                     <h4>Enlaces Rápidos</h4>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="../pages/fullstack.html">Desarrollo Fullstack</a></li>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../pages/fullstack.html">FullStack Dev</a></li>
                         <li><a href="../pages/ia-generativa.html">IA Generativa</a></li>
-                        <li><a href="../pages/contact.html">Contáctame</a></li>
+                        <li><a href="../pages/contact.html">Contacto</a></li>
                     </ul>
                 </div>
                 
@@ -335,7 +409,7 @@
                         <a href="https://github.com/RyuZeNK-Ai" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/nicolas-pena-fullstack/" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/in/nicolas-pena-ai-dev" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-linkedin"></i>
                         </a>
                         <a href="https://www.instagram.com/ryuzenk.ai/" target="_blank" rel="noopener noreferrer">
@@ -388,6 +462,9 @@
                     setTimeout(() => {
                         this.style.animation = '';
                     }, 500);
+
+                    // Mostrar modal personalizado
+                    document.getElementById('blockedModal').classList.add('active');
                 });
             });
         });
@@ -401,38 +478,38 @@
             {
                 id: 'cyberpunk',
                 src: '../assets/images/depresion.png',
-                title: 'Cyberpunk Cityscape',
-                description: 'Generado con Stable Diffusion + ControlNet. Ciudad futurista con efectos de neón y arquitectura cyberpunk.'
+                title: 'Personaje Oscuro',
+                description: 'Generado con Nano Banana y Gemini.'
             },
             {
                 id: 'futurista',
                 src: '../assets/images/chica_anime1.jpg',
-                title: 'Diseño Futurista',
-                description: 'Creación con Leonardo.Ai para concepto de interfaz de usuario con estética anime futurista.'
+                title: 'Chica Anime',
+                description: 'Creación con Stable Diffusion.'
             },
             {
                 id: 'personaje',
                 src: '../assets/images/persona_cyberpunk.jpg',
-                title: 'Personaje IA Generado',
-                description: 'Diseño de personaje cyberpunk para proyecto de videojuego con múltiples variantes y detalles biomecánicos.'
+                title: 'Persona Cyberpunk',
+                description: 'Generado con Leonardo.Ai.'
             },
             {
                 id: 'paisaje',
                 src: '../assets/images/paisaje_japones1.jpg',
                 title: 'Paisaje Japonés',
-                description: 'Paisaje tradicional japonés con cerezos y montañas, generado con Stable Diffusion.'
+                description: 'Generado con Nano Banana y Gemini.'
             },
             {
                 id: 'abstracto',
                 src: '../assets/images/personaje_cyberpunk1.jpg',
-                title: 'Arte Abstracto Digital',
-                description: 'Exploración de formas y colores generada con Nano Banana AI, fusión de arte tradicional y digital.'
+                title: 'Personaje Cyberpunk',
+                description: 'Generado con Nano Banana y Gemini.'
             },
             {
                 id: 'concept',
                 src: '../assets/images/personajes_animados.jpg',
-                title: 'Concept Art para Juego',
-                description: 'Diseño de personajes animados para proyecto de videojuego independiente con paleta de colores vibrante.'
+                title: 'Personajes Anime',
+                description: 'Generado con Nano Banana y Gemini.'
             }
         ];
 
@@ -501,20 +578,14 @@
         // Actualizar contenido del lightbox
         function updateIALightbox() {
             const lightboxImage = document.getElementById('iaLightboxImage');
-            const imageCounter = document.getElementById('iaImageCounter');
             const lightboxTitle = document.getElementById('iaLightboxTitle');
-            const lightboxDescription = document.getElementById('iaLightboxDescription');
-            
+
             // Actualizar imagen
             lightboxImage.src = iaImages[currentIAIndex].src;
             lightboxImage.alt = iaImages[currentIAIndex].title;
-            
-            // Actualizar contador
-            imageCounter.textContent = `${currentIAIndex + 1} / ${iaImages.length}`;
-            
-            // Actualizar título y descripción
+
+            // Actualizar título
             lightboxTitle.textContent = iaImages[currentIAIndex].title;
-            lightboxDescription.textContent = iaImages[currentIAIndex].description;
         }
 
         // Navegación con teclado
@@ -543,6 +614,32 @@
             if (lightbox.classList.contains('active') && 
                 event.target.classList.contains('lightbox-backdrop')) {
                 closeIALightbox();
+            }
+        });
+
+        // Función para cerrar modal bloqueado
+        function closeBlockedModal() {
+            const modal = document.getElementById('blockedModal');
+            if (modal) {
+                modal.classList.remove('active');
+            }
+        }
+
+        // Cerrar modal al hacer click fuera
+        document.addEventListener('DOMContentLoaded', function() {
+            const blockedModal = document.getElementById('blockedModal');
+            if (blockedModal) {
+                blockedModal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeBlockedModal();
+                    }
+                });
+
+                // Cerrar modal con botón close
+                const closeBtn = blockedModal.querySelector('.close-btn');
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', closeBlockedModal);
+                }
             }
         });
 

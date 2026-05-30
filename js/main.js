@@ -316,7 +316,7 @@ function setupContactForm() {
         
         try {
             // Enviar a Formspree
-            const response = await fetch('https://formspree.io/f/mrbrvvwa', {
+            const response = await fetch('https://formspree.io/f/meeddvlq', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

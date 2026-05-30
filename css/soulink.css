@@ -1,14 +1,15 @@
 /* ============================================
-   DETALLE DE PROYECTO FULLSTACK - SOULINK
+   DETALLE DE PROYECTO - SOULINK
    ============================================ */
 .project-detail-section {
-    padding-top: 180px;
+    padding-top: 220px;
     min-height: 100vh;
 }
 
 /* Botón para volver */
 .back-button {
     margin-bottom: 30px;
+    margin-top: 60px;
 }
 
 .back-button .btn-small {
