@@ -101,9 +101,10 @@
 
 /* Projects grid en IA (2 columnas como fullstack) */
 .ia-gallery-section .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 860px !important;
-    margin: 0 auto !important;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100% !important;
+    margin: 0 !important;
+    gap: 1rem !important;
 }
 
 .ia-gallery-section .project-image {

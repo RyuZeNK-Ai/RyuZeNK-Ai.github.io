@@ -550,21 +550,26 @@ body {
 }
 
 .fullstack-projects .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 860px !important;
-    margin: 0 auto !important;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100% !important;
+    margin: 0 !important;
+    gap: 1rem !important;
 }
 
 .ai-projects .projects-grid {
-    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100% !important;
+    margin: 0 !important;
+    gap: 1rem !important;
 }
 
-/* Home: 2 cards fijas centradas — gana sobre responsive.css repeat(3, 1fr) e !important */
+/* Home: 3 cards horizontales en inicio — gana sobre responsive.css e !important */
 @media (min-width: 768px) {
     #developer .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 860px !important;
-        margin: 0 auto !important;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 100% !important;
+        margin: 0 !important;
+        gap: 1rem !important;
     }
 
     #ai .projects-grid {
