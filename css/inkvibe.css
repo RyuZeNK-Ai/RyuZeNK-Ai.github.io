@@ -2,7 +2,7 @@
    DETALLE DE PROYECTO - INKVIBE
    ============================================ */
 .project-detail-section {
-    padding-top: 220px;
+    padding-top: 300px;
     min-height: 100vh;
 }
 
@@ -107,6 +107,7 @@
     width: 100%;
     height: 400px;
     object-fit: cover;
+    object-position: 50% 12%;
     display: block;
 }
 
@@ -239,6 +240,7 @@
 .content-section {
     margin-bottom: 50px;
     padding-left: 20px;
+    padding-right: 20px;
     border-left: 4px solid rgba(0, 243, 255, 0.1);
     transition: border-left-color 0.3s ease;
 }
@@ -322,8 +324,9 @@
 
 .screenshot-card img {
     width: 100%;
-    height: 200px;
+    height: 280px;
     object-fit: cover;
+    object-position: 50% 50%;
 }
 
 .screenshot-info {
@@ -978,7 +981,21 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+/* Tablets medianos (iPad Air 820px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .project-detail-section {
+        padding-top: 400px;
+    }
+}
+
+/* iPad Air específicamente (800px-850px) */
+@media (min-width: 800px) and (max-width: 850px) {
+    .project-detail-section {
+        padding-top: 450px;
+    }
+}
+
+@media (max-width: 767px) {
     .project-detail-section {
         padding-top: 150px;
     }
@@ -1059,11 +1076,12 @@
     }
 
     .lightbox-modal {
-        width: 95%;
+        width: 98%;
+        max-height: 90vh;
     }
 
     .lightbox-image-wrapper {
-        height: 300px;
+        height: 60vh;
         padding: 15px;
     }
 
@@ -1092,7 +1110,7 @@
 
 @media (min-width: 1200px) {
     .screenshot-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .features-grid {

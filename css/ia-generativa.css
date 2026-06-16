@@ -641,11 +641,12 @@
 /* Responsive */
 @media (max-width: 768px) {
     .lightbox-modal {
-        width: 95%;
+        width: 98%;
+        max-height: 90vh;
     }
-    
+
     .lightbox-image-wrapper {
-        height: 300px;
+        height: 60vh;
         padding: 15px;
     }
     

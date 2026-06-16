@@ -339,6 +339,27 @@
     }
 }
 
+/* 6.5. TABLETS PEQUEÑOS (768px - 900px) - iPad Mini */
+@media screen and (min-width: 768px) and (max-width: 900px) {
+    .navbar {
+        padding: 12px 0;
+        height: 70px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
+
 /* 7. TABLETS GRANDES (1024px - 1279px) - Rango problemático alto */
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
     .container {
