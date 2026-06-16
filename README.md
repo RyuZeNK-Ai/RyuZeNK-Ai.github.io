@@ -99,7 +99,7 @@ python -m http.server 8000
 
 ## 📧 Contacto
 
-- **Email**: soporte@abada.cl
+- **Email**: ryuzenkai.dev@gmail.com
 - **GitHub**: [@RyuZeNK-Ai](https://github.com/RyuZeNK-Ai)
 - **LinkedIn**: [nicolas-pena-ai-dev](https://www.linkedin.com/in/nicolas-pena-ai-dev)
 - **Instagram**: [@ryuzenk.ai](https://www.instagram.com/ryuzenk.ai/)
