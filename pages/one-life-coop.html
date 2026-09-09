@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>One Life Co-op - Project Zomboid Mod | RyuZeNK.Ai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/soulink.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <style>
+        /* Ajuste exclusivo de One Life Co-op: mostrar el hero de gameplay completo, sin recorte */
+        .project-hero-image.hero-gameplay {
+            background: rgba(10, 10, 26, 0.9);
+        }
+        .project-hero-image.hero-gameplay img {
+            height: auto;
+            max-height: 600px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="../index.html" class="logo">RyuZeNK.<span>Ai</span></a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../pages/fullstack.html">FullStack Dev</a></li>
+                <li><a href="../pages/ia-generativa.html">IA Generativa</a></li>
+                <li><a href="../pages/contact.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sección de Detalles del Proyecto -->
+    <section class="section project-detail-section">
+        <div class="container">
+            <!-- Enlace para volver -->
+            <div class="back-button">
+                <a href="fullstack.html" class="btn-small">
+                    <i class="fas fa-arrow-left"></i> Volver a Proyectos
+                </a>
+            </div>
+
+            <!-- Proyecto One Life Co-op Detallado -->
+            <article id="one-life-coop" class="project-detail">
+                <!-- Cabecera del proyecto -->
+                <div class="project-header">
+                    <div class="project-badge">
+                        <span class="badge">Proyecto Personal</span>
+                        <span class="badge">Project Zomboid Mod</span>
+                        <span class="live-badge">¡PUBLICADO!</span>
+                    </div>
+                    <h1 class="project-title">One Life Co-op</h1>
+                    <p class="project-subtitle">Project Zomboid Multiplayer Mod</p>
+                </div>
+
+                <!-- Imagen principal del proyecto -->
+                <div class="project-hero-image hero-gameplay">
+                    <img loading="lazy" src="../assets/images/one-life-coop/one-life-coop-gameplay.png" alt="One Life Co-op - Mod cooperativo para Project Zomboid">
+                    <div class="project-tech-banner">
+                        <span>Lua</span>
+                        <span>Project Zomboid</span>
+                        <span>Multiplayer</span>
+                        <span>Client / Server</span>
+                        <span>Steam Workshop</span>
+                    </div>
+                </div>
+
+                <!-- Información básica -->
+                <div class="project-meta-info">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <span class="meta-label">Estado</span>
+                            <span class="meta-value status-active">PUBLICADO / ACTIVO</span>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-code-branch"></i>
+                        <div>
+                            <span class="meta-label">Tipo</span>
+                            <span class="meta-value">Proyecto Personal</span>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <span class="meta-label">Rol</span>
+                            <span class="meta-value">Desarrollo completo del mod</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enlaces del proyecto REALES -->
+                <div class="project-links-main">
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3798372527" target="_blank" class="btn btn-demo">
+                        <i class="fab fa-steam"></i> Ver en Steam Workshop
+                    </a>
+                    <a href="https://github.com/RyuZeNK-Ai/one-life-coop-project-zomboid-mod" target="_blank" class="btn btn-code">
+                        <i class="fab fa-github"></i> Ver Código en GitHub
+                    </a>
+                </div>
+
+                <!-- Descripción detallada -->
+                <div class="project-content">
+                    <section class="content-section">
+                        <h2><i class="fas fa-info-circle"></i> ¿Qué es One Life Co-op?</h2>
+                        <div class="description-content">
+                            <p><strong>One Life Co-op es un mod cooperativo para Project Zomboid diseñado para convertir la supervivencia en una responsabilidad compartida.</strong></p>
+                            <p>Si cualquier jugador recibe una mordida genuina de un zombie o muere por cualquier causa, toda la partida entra en una cuenta regresiva y la sesión del Host se cierra automáticamente.</p>
+                            <p>La idea es que la supervivencia del grupo dependa de todos.</p>
+                        </div>
+                    </section>
+
+                    <!-- Cómo funciona -->
+                    <section class="content-section">
+                        <h2><i class="fas fa-cogs"></i> ¿Cómo funciona?</h2>
+                        <div class="description-content">
+                            <p>El mod selecciona un punto de aparición compartido para la partida. Todos los jugadores creados durante esa sesión utilizan ese mismo punto de spawn.</p>
+                            <p>La partida continúa normalmente hasta que ocurre una de estas condiciones:</p>
+                            <ul class="impact-list">
+                                <li>Un jugador recibe una mordida genuina de un zombie.</li>
+                                <li>Un jugador muere por cualquier causa.</li>
+                            </ul>
+                            <p>Cuando ocurre:</p>
+                            <ol class="impact-list">
+                                <li>Todos los jugadores reciben una advertencia.</li>
+                                <li>Se inicia una cuenta regresiva compartida de 10 segundos.</li>
+                                <li>Al finalizar, la sesión del Host se cierra automáticamente.</li>
+                                <li>La partida puede reiniciarse para comenzar una nueva run.</li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <!-- Sistema de mordidas y muerte -->
+                    <section class="content-section">
+                        <h2><i class="fas fa-skull-crossbones"></i> Sistema de mordidas y muerte</h2>
+                        <div class="tech-stack-real">
+                            <div class="tech-category">
+                                <h3><i class="fas fa-check-circle"></i> Se activa mediante</h3>
+                                <ul>
+                                    <li><strong>Mordidas genuinas</strong> de zombies</li>
+                                    <li><strong>La muerte</strong> de cualquier jugador</li>
+                                </ul>
+                            </div>
+                            <div class="tech-category">
+                                <h3><i class="fas fa-times-circle"></i> No se activa mediante</h3>
+                                <ul>
+                                    <li><strong>Arañazos</strong></li>
+                                    <li><strong>Laceraciones</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Spawn compartido -->
+                    <section class="content-section">
+                        <h2><i class="fas fa-map-marker-alt"></i> Spawn compartido</h2>
+                        <div class="description-content">
+                            <p>Todos los jugadores de una misma partida comparten un único punto de aparición seleccionado aleatoriamente.</p>
+                            <p>El sistema utiliza el spawn nativo de Project Zomboid. No utiliza teletransporte posterior a la creación del personaje.</p>
+                        </div>
+                        <div class="impact-stats">
+                            <div class="stat-card">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span class="stat-number">71</span>
+                                <span class="stat-label">Puntos de aparición en el pool</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Arquitectura -->
+                    <section class="content-section">
+                        <h2><i class="fas fa-sitemap"></i> Arquitectura</h2>
+
+                        <div class="tech-stack-real">
+                            <div class="tech-category">
+                                <h3><i class="fas fa-server"></i> Servidor (Lógica Principal)</h3>
+                                <ul>
+                                    <li><strong>Detección de mordidas</strong></li>
+                                    <li><strong>Detección de muertes</strong></li>
+                                    <li><strong>Inicio del countdown</strong></li>
+                                    <li><strong>Selección del spawn compartido</strong></li>
+                                    <li><strong>Sincronización de advertencias</strong></li>
+                                </ul>
+                            </div>
+
+                            <div class="tech-category">
+                                <h3><i class="fas fa-desktop"></i> Cliente</h3>
+                                <ul>
+                                    <li><strong>Recepción de eventos</strong> enviados por el servidor</li>
+                                    <li><strong>Visualización de advertencias</strong> del countdown</li>
+                                </ul>
+                            </div>
+
+                            <div class="tech-category">
+                                <h3><i class="fas fa-code"></i> Tecnologías</h3>
+                                <ul>
+                                    <li><strong>Lua</strong> - Lenguaje del mod</li>
+                                    <li><strong>Project Zomboid Event System</strong></li>
+                                    <li><strong>Multiplayer Client / Server Architecture</strong></li>
+                                    <li><strong>Server-authoritative Logic</strong></li>
+                                    <li><strong>Steam Workshop</strong> - Distribución</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Call to Action -->
+                    <div class="project-cta">
+                        <h3><i class="fas fa-rocket"></i> ¿Quieres jugarlo?</h3>
+                        <p>One Life Co-op está <strong>PUBLICADO Y DISPONIBLE</strong> en Steam Workshop. Puedes suscribirte, revisar el código fuente completo en GitHub y jugarlo en cooperativo con tu grupo.</p>
+                        <div class="cta-buttons">
+                            <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3798372527" target="_blank" class="btn btn-primary">
+                                <i class="fab fa-steam"></i> Ver en Steam Workshop
+                            </a>
+                            <a href="https://github.com/RyuZeNK-Ai/one-life-coop-project-zomboid-mod" target="_blank" class="btn btn-secondary">
+                                <i class="fab fa-github"></i> Explorar Código Fuente
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html" class="logo">RyuZeNK.<span>Ai</span></a>
+                    <p>Desarrollo + Creatividad + Innovación</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../pages/fullstack.html">FullStack Dev</a></li>
+                        <li><a href="../pages/ia-generativa.html">IA Generativa</a></li>
+                        <li><a href="../pages/contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Conecta conmigo</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/RyuZeNK-Ai" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nicolas-pena-ai-dev" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ryuzenk.ai/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 RyuZeNK.Ai - Nicolás Peña. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón para subir arriba -->
+    <button id="scrollTopBtn" class="scroll-top-btn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
