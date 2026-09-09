@@ -933,7 +933,8 @@
     }
 
     .fullstack-projects .projects-grid,
-    .ia-gallery-section .projects-grid {
+    .ia-gallery-section .projects-grid,
+    .ai-projects .projects-grid {
         grid-template-columns: 1fr !important;
     }
 
